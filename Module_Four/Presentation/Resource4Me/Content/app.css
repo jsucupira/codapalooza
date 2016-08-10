@@ -1,4 +1,5 @@
-﻿.appTitle {
+﻿
+.appTitle {
     float: left;
     margin-left: 74px;
     padding-top: 31px;
@@ -147,8 +148,8 @@
 }
 
 section {
-    width: 95vw;
-    min-height: 90vh;
+    width: 100vw;
+    min-height: 100vh;
     padding: 25px;
 }
 
@@ -171,9 +172,48 @@ img {
     color: #fff;
 }
 
-#home {
-    background: url('../Images/home_bg.png');
-    background-size: 100% 100%;
+.appBkg {
+    background: url('../Images/Hope.jpg')  center center no-repeat ;
+    /* background-size: 100% 100%; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin:0px 0px 0px 0px;  
+    
+}
+
+.text-white
+{
+    color:white;
+}
+
+.text-black
+{
+    color:black;
+}
+
+.text-red
+{
+    color:#ae3e34;
+}
+
+.default-Font
+{
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.padding15
+{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px
+}
+
+.padding15_lr
+{
+    padding-left: 15px;
+    padding-right: 15px
 }
 
 #contact {
@@ -300,4 +340,8 @@ div[class^='curve_'] {
     border-radius: 6px;
     box-shadow: 0 2px 2px #ccc;
     color: #fff;
+}
+.container-fluid{
+    margin-right: 0;
+margin-left:0;
 }

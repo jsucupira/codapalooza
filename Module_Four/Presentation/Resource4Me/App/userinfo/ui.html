@@ -10,65 +10,103 @@
 
 </head>
 
-<body data-spy="scroll" data-target=".navbar">
+<body class="appBkg" data-spy="scroll" data-target=".navbar">
     <section ng-hide="isThankYou">
         <form>
-            <div class="form-group">
-                <label for="yourFirstName" class="control-label">First Name</label>
-                <input type="text" class="form-control" id="yourFirstName" placeholder="First name" ng-model="firstName">
-            </div>
-            <div class="form-group">
-                <label for="yourLastName" class="control-label">Last Name</label>
-                <input type="text" class="form-control" id="yourLastName" placeholder="Last name" ng-model="lastName">
-            </div>
-            <div class="form-group">
-                <label for="yourPhone" class="control-label">Phone</label>
-                <input type="text" class="form-control" id="yourPhone" placeholder="(XXX)XXX-XXXX" ng-model="phone">
-            </div>
-            <div class="form-group">
-                <label for="yourEmail" class="control-label">Email address</label>
-                <input type="email" class="form-control" id="yourEmail" placeholder="Your Email Address" ng-model="email">
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsStatus" id="optionsRadios1" value="single" ng-model="marriableStatus"> Single
-                </label>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsGender" class="disabled" value="Male" ng-model="gender" ng-disabled="marriableStatus != 'single'"> Male
-                    </label>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="yourFirstName" class="control-label">First Name</label>
+                        <input type="text" class="form-control" id="yourFirstName" placeholder="First name" ng-model="firstName">
+                    </div>
                 </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsGender" value="Female" ng-model="gender" ng-disabled="marriableStatus != 'single'"> Female
-                    </label>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="yourLastName" class="control-label">Last Name</label>
+                        <input type="text" class="form-control" id="yourLastName" placeholder="Last name" ng-model="lastName">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="yourPhone" class="control-label">Phone</label>
+                        <input type="text" class="form-control" id="yourPhone" placeholder="(XXX)XXX-XXXX" ng-model="phone">
+                    </div>
                 </div>
             </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsStatus" id="optionsRadios2" value="married" ng-model="marriableStatus"> Married
-                </label>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="yourEmail" class="control-label">Email address</label>
+                        <input type="email" class="form-control" id="yourEmail" placeholder="Your Email Address" ng-model="email">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <label for="optionsGender" class="control-label">Gender</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsGender" class="disabled" value="Male" ng-model="gender" ng-disabled="marriableStatus != 'single'"> Male
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsGender" value="Female" ng-model="gender" ng-disabled="marriableStatus != 'single'"> Female
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <label for="optionsStatus" class="control-label">Status</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsStatus" id="optionsRadios1" value="single" ng-model="marriableStatus"> Single
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsStatus" id="optionsRadios2" value="married" ng-model="marriableStatus"> Married
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsStatus" id="optionsRadios3" value="has partner" ng-model="marriableStatus"> Partnership
+                        </label>
+                    </div>
+                </div>
+             </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="sel1">How many children under 18?:</label>
+                        <select class="form-control" id="sel1" ng-model="childrenCount">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    &nbsp;
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    &nbsp;
+                </div>
+             </div>  
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        &nbsp;
+                    </div>
+                </div>
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <button type="submit" class="btn btn-lg btn-block btn-custom" ng-click="submit()">Submit</button>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    &nbsp;
+                </div>
             </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsStatus" id="optionsRadios3" value="has partner" ng-model="marriableStatus"> Partnership
-                </label>
-            </div>
-            <div class="form-group">
-                <label for="sel1">How many children under 18?:</label>
-                <select class="form-control" id="sel1" ng-model="childrenCount">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5+</option>
-
-                </select>
-            </div>
-
-
-            <button type="submit" class="btn btn-lg btn-block btn-custom" ng-click="submit()">Submit</button>
-        </form>
+            
+</form>
     </section>
 
     <section ng-show="isThankYou">

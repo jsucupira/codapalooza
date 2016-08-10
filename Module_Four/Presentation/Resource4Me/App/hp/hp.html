@@ -3,18 +3,28 @@
 
 <head>
     <title>Resources for you - Home</title>
-    <link href="../../Content/bootstrap-theme.css" rel="stylesheet" />
-    <link href="../../Content/bootstrap.css" rel="stylesheet" />
-    <script src="../../scripts/bootstrap.js"></script>
-    <link href="../../Content/app.css" rel="stylesheet" />
-
+    <link href="/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <script src="/scripts/bootstrap.js"></script>
+    <link href="/Content/app.css" rel="stylesheet" />
+    <script src="/scripts/jquery-2.2.3.min.js"></script>
 </head>
 
-<body data-spy="scroll" data-target=".navbar">
-    <div class="home-button">
-        <button type="button" class="btn btn-lg btn-block btn-custom" style="margin-bottom: 5%; color: white">I NEED URGENT ASSISTANCE</button>
-        <button type="button" class="btn btn-lg btn-block btn-custom" style="margin-bottom: 5%; color: white" ng-click="gotoFR();">FIND RESOURCES FOR ME</button>
-        <button type="button" class="btn btn-lg btn-block btn-custom" style="margin-bottom: 5%; color: white">FIND RESOURCES FOR A FAMILY</button>
+<body data-spy="scroll" class="appBkg" >
+    <div class="home-button padding15_lr" data-target=".navbar"> <!---->
+        
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-offset-1 col-lg-3">
+                <button type="button" class="btn btn-lg btn-block btn-custom" style="margin-bottom: 5%; color: white">I need urgent assistance</button>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-offset-1 col-lg-3">
+                <button type="button" class="btn btn-lg btn-block btn-custom" style="margin-bottom: 5%; color: white" ng-click="gotoFR();">Find resources for me</button>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-offset-1 col-lg-3">
+                <button type="button" class="btn btn-lg btn-block btn-custom" style="margin-bottom: 5%; color: white">find resources for a family</button>
+            </div>
+
+        </div>    
     </div>
     <!--<nav class="navbar navbar-inverse navbar-fixed-bottom text-center">
         <ul class="nav navbar-nav">
@@ -25,11 +35,9 @@
 
         </ul>
     </nav>-->
-    <section id="home" class="text-primary text-center">
-
-
-        <h1 style="color: white;">Resources4U</h1>
-        <p style="color: whitesmoke;" class="lead">App to help those in need...</p>
+    <section id="home" class="text-primary text-center img-responsive ">
+        <h1 class="text-black">Resources4U</h1>
+        <p  class="text-black lead">App to help those in need...</p>
 
 
         <!--<div class="spinner">
