@@ -217,12 +217,12 @@ img {
 }
 
 #contact {
-    background: url(../images/fire.jpg);
+    background: url('images/fire.jpg');
     background-size: 100% 100%;
 }
 
 #about {
-    background: url(../images/schedule.jpg);
+    background: url('images/schedule.jpg');
     background-size: 100% 100%;
 }
 

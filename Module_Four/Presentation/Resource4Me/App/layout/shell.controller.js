@@ -16,6 +16,8 @@
         $scope.gotoFR = function () {
             $location.path("/FR");
         }
+
+
         $location.path('/HP');
     }
 })();
