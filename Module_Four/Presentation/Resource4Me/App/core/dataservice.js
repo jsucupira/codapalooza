@@ -43,12 +43,12 @@
         }
 
       function shapeResourceData(data) {
-            var shapedData = [{ resourceName: 'Clothing', details: [] },
-                              { resourceName: 'Food', details: [] },
-                              { resourceName: 'Shelter', details: [] }, 
-                              { resourceName: 'Domestic Violence', details: [] },
-                              { resourceName: 'Hygiene Products', details: [] },
-                              { resourceName: 'Medical', details: [] }];
+          var shapedData =   [{ resourceIndex: 'CLOT', resourceName: 'Clothing', details: [] },
+                              { resourceIndex: 'FOOD', resourceName: 'Food', details: [] },
+                              { resourceIndex: 'SHEL', resourceName: 'Shelter', details: [] },
+                              { resourceIndex: 'DOMV', resourceName: 'Domestic Violence', details: [] },
+                              { resourceIndex: 'HYGP', resourceName: 'Hygiene Products', details: [] },
+                              { resourceIndex: 'MEDI', resourceName: 'Medical', details: [] }];
 
            function getIndex(resource) {
                for (var idx = 0; idx < shapedData.length; idx++) {

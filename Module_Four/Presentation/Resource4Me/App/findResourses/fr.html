@@ -1,13 +1,9 @@
 ﻿
-<nav class="navbar navbar-default navbar-fixed-top ">
 
-    <h3 class="navbar-text text-black">Resources4u</h3>
-
-</nav>
-<div class="appBkg">
+<div class="ng-cloak">
     <br />
     <input type="checkbox" ng-model="myValue" aria-label="Toggle ngShow" hidden="hidden"><br />
-    <section id="findresourcesme" ng-show="myValue">
+    <section id="findresourcesme" ng-show="myValue" ng-cloak>
         <div class="panel-group" id="accordion">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -79,31 +75,49 @@
     </section>
 
     <!--Another page-->
-    <div class="well">
-        <h2 class="text-danger">Resources</h2>
-        <hr>
-        <ul>
-            <li ng-repeat="Data in myData">
+    <div>
+        <h1 class="text-danger">Resources</h1>
+        <div>
+       
+            <div ng-repeat="Data in myData">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" id="providername">
+                                <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}">{{Data.resourceName}}</a> 
+                                <span class="caret text-right"></span>
+                                <span class="text-white pull-right">Results:{{Data.details.length}}</span>
+                            </h4>
+                        </div>
+                        <div id="{{Data.resourceIndex}}" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <div ng-repeat="Inside in Data.details" class="alert-info padding15">
+                                    <a href="/#/UserInfo">{{Inside.providerName}}</a>
+                                    <p>Distance: {{Inside.distance}} miles</p>
+                                    <p id="street">{{Inside.streetAddress}}</p>
+                                    <p id="citystatezip">{{Inside.city}}, {{Inside.state}} {{Inside.zipCode}}</p>
+                                    <p id="phone">{{Inside.phoneNumber}}</p>
+                                    <p id="availability"><span class="badge">5</span>&nbsp;Available Beds | Check-in before: 5PM</p>
+                                    <br/>
+                                    <p id="service_offered"><b>Service Offered:</b> AIDS/Drug Assistance Programs,Case/Care Management,Education, Employment, Food,Material Goods,Personal Enrichment, Temporary Financial Assistance, Transportation</p>
+                                    <br/>
+                                    <a href="/#/UserInfo" class="btn btn-lg btn-custom text-white">Apply for Resource </a>
+                                </div>
+                                <br/>
+                                <br />
+                            </div>
 
-                <h4 id="providername" style="font-weight: bold;">{{Data.resourceName}}</h4>
-                <div ng-repeat="Inside in Data.details">
-                    <a href="/#/UserInfo">{{Inside.providerName}}</a>
-                    <p>Distance: {{Inside.distance}} miles</p>
-                    <p id="street">{{Inside.streetAddress}}</p>
-                    <p id="citystatezip">{{Inside.city}}, {{Inside.state}} {{Inside.zipCode}}</p>
-                    <p id="phone">{{Inside.phoneNumber}}</p>
-                    <p id="availability"><span class="badge">5</span>&nbsp;Available Beds | Check-in before: 5PM</p>
-                    <br>
-                    <p id="service_offered"><b>Service Offered:</b> AIDS/Drug Assistance Programs,Case/Care Management,Education, Employment, Food,Material Goods,Personal Enrichment, Temporary Financial Assistance, Transportation</p>
-                    <br>
+                        </div>
+                    </div>
                 </div>
-            </li>
-
-        </ul>
-        <h4 class="text-center">
-            <i class="glyphicon glyphicon-sort"><a href="#">Directions</a></i>&nbsp;&nbsp;
-            <i class="glyphicon glyphicon-earphone"><a href="#">Contact</a></i>&nbsp;&nbsp;
-            <i class="glyphicon glyphicon-grain"><a href="#">Eligibility</a></i>
-        </h4>
-    </div>
+            </div>
+                    <br />
+                    <br />
+                </div>
+                <h4 class="text-center">
+                    <i class="glyphicon glyphicon-sort"><a href="#">Directions</a></i>&nbsp;&nbsp;
+                    <i class="glyphicon glyphicon-earphone"><a href="tel:18004181447">Contact</a></i>&nbsp;&nbsp;
+                    <i class="glyphicon glyphicon-grain"><a href="#">Eligibility</a></i>
+                </h4>
+            </div>
 </div>
