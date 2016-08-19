@@ -1,9 +1,8 @@
 ﻿
-
 <div class="ng-cloak">
-    <br />
-    <input type="checkbox" ng-model="myValue" aria-label="Toggle ngShow" hidden="hidden"><br />
+    <input type="checkbox" ng-model="myValue" aria-label="Toggle ngShow" hidden="hidden">
     <section id="findresourcesme" ng-show="myValue" ng-cloak>
+        <p class="text-black">*** Please select any one or all above mentioned fields</p>
         <div class="panel-group" id="accordion">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -66,58 +65,104 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <span class="text-red">***</span><p class="text-black"> Please select any one or all above mentioned fields</p>
+            <br/>
+            
             <div class="text-center">
-                <input type="submit" class="btn btn-custom" ng-click="Update()" value="SEARCH" />
+                <button type="submit" class="btn btn-lg btn-custom" ng-click="Update()" value="Search"><i class="glyphicon glyphicon-search "></i>&nbsp; Search </button>
             </div>
         </div>
     </section>
 
     <!--Another page-->
     <div>
-        <h1 class="text-danger">Resources</h1>
+        <h2 class="text-black text-center">Resources 4 u</h2>
         <div>
-       
             <div ng-repeat="Data in myData">
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title" id="providername">
-                                <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}">{{Data.resourceName}}</a> 
+                                <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}">{{Data.resourceName}}</a>
                                 <span class="caret text-right"></span>
-                                <span class="text-white pull-right">Results:{{Data.details.length}}</span>
+                                <span class="label label-success badge pull-right">{{Data.details.length}}</span>
+                                <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}" class="pull-right">Results:</a>
                             </h4>
                         </div>
-                        <div id="{{Data.resourceIndex}}" class="panel-collapse collapse in">
+                        <div id="{{Data.resourceIndex}}" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <div ng-repeat="Inside in Data.details" class="alert-info padding15">
-                                    <a href="/#/UserInfo">{{Inside.providerName}}</a>
-                                    <p>Distance: {{Inside.distance}} miles</p>
-                                    <p id="street">{{Inside.streetAddress}}</p>
-                                    <p id="citystatezip">{{Inside.city}}, {{Inside.state}} {{Inside.zipCode}}</p>
-                                    <p id="phone">{{Inside.phoneNumber}}</p>
-                                    <p id="availability"><span class="badge">5</span>&nbsp;Available Beds | Check-in before: 5PM</p>
-                                    <br/>
-                                    <p id="service_offered"><b>Service Offered:</b> AIDS/Drug Assistance Programs,Case/Care Management,Education, Employment, Food,Material Goods,Personal Enrichment, Temporary Financial Assistance, Transportation</p>
-                                    <br/>
-                                    <a href="/#/UserInfo" class="btn btn-lg btn-custom text-white">Apply for Resource </a>
+                                <div ng-repeat="Inside in Data.details" class="alert-info padding15 margin15_b">
+
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p><span>Provider:</span> </p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <p class="text-black">{{Inside.providerName}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p>Distance:</p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <span class="text-black"> {{Inside.distance  | number:2 }} miles </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p>Address:</p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <p id="street" class="text-black">{{Inside.streetAddress}}</p>
+                                            <p id="citystatezip" class="text-black">{{Inside.city}}, {{Inside.state}} {{Inside.zipCode}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p>Phone:</p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <p id="phone" class="text-black">{{Inside.phoneNumber}}</p><a href="tel:{{Inside.phoneNumber}}" class="btn btn-lg btn-custom text-white"><i class="glyphicon glyphicon-earphone"></i> Call</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p>Availability:</p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <p id="availability" class="text-black"><span class="badge">5</span>&nbsp;Available Beds | Check-in before: 5PM</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p>Service Offered:</p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <p id="service_offered" class="text-black"> AIDS/Drug Assistance Programs,Case/Care Management,Education, Employment, Food,Material Goods,Personal Enrichment, Temporary Financial Assistance, Transportation</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            &nbsp;
+                                        </div>
+                                         <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                                <a href="/#/UserInfo" class="btn btn-lg btn-custom text-white">Apply for Resource </a>
+                                            </div>
+                                        </div>
                                 </div>
-                                <br/>
                                 <br />
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-                    <br />
-                    <br />
-                </div>
-                <h4 class="text-center">
-                    <i class="glyphicon glyphicon-sort"><a href="#">Directions</a></i>&nbsp;&nbsp;
-                    <i class="glyphicon glyphicon-earphone"><a href="tel:18004181447">Contact</a></i>&nbsp;&nbsp;
-                    <i class="glyphicon glyphicon-grain"><a href="#">Eligibility</a></i>
-                </h4>
-            </div>
+            <br />
+        </div>
+        <div class="alert-warning navbar-fixed-bottom text-center">
+            <br />
+            <i class="glyphicon glyphicon-sort"> <span><a href="#">Directions</a></span></i>&nbsp;&nbsp;
+            <i class="glyphicon glyphicon-earphone"><span> <a href="tel:18004181447">Contact</a></span></i> &nbsp;&nbsp;
+            <i class="glyphicon glyphicon-grain"><span> <a href="#">Eligibility</a></span></i>
+</div>
+    </div>
 </div>
