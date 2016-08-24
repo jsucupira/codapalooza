@@ -1,5 +1,15 @@
-﻿
-<div class="ng-cloak">
+﻿<div class="ng-cloak">
+    <nav class="navbar navbar-fixed-top  navbar-inverse">
+            <span class="pull-left" >
+                <a href="#/HP" title="Home Page" class="btn btn-danger btn-sm"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
+            </span>
+        <span class="text-center">
+            <span class="navbar-header text-white nav-icons">
+                Resources4u
+            </span>
+        </span>
+    </nav>
+
     <input type="checkbox" ng-model="myValue" aria-label="Toggle ngShow" hidden="hidden">
     <section id="findresourcesme" ng-show="myValue" ng-cloak>
         <p class="text-black">*** Please select any one or all above mentioned fields</p>
@@ -75,7 +85,7 @@
 
     <!--Another page-->
     <div>
-        <h2 class="text-black text-center">Resources 4 u</h2>
+       
         <div>
             <div ng-repeat="Data in myData">
                 <div class="panel-group" id="accordion">

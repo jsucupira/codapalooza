@@ -13,6 +13,16 @@
     color: white;
 }
 
+.nav-custom {
+    color: #fff;
+    background-color: #ae3e34;
+    
+}
+
+.nav-icons{
+    font-size: 18px;
+}
+
 .home-button {
     position: fixed;
     top: 80%;
@@ -22,6 +32,7 @@
     width: 95%;
     /*margin-left: -300px;*/
 }
+
 
 .btn-custom {
     color: #fff;
