@@ -1,4 +1,4 @@
-﻿<section ng-hide="isThankYou" >
+﻿<section ng-hide="isThankYou">
     <nav class="navbar navbar-fixed-top  navbar-inverse">
         <span class="pull-left">
             <a href="#/HP" title="Home Page" class="btn btn-danger btn-sm"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
@@ -14,121 +14,128 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title" id="providername">
-                        <a data-toggle="collapse" data-parent="#accordion" href="" >Application</a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="">Application</a>
                         <span class="caret text-right"></span>
                     </h4>
                 </div>
                 <div id="application" class="panel-collapse collapse in">
                     <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                <div class="form-group">
-                                    <label for="yourFirstName" class="control-label">First Name</label>
-                                    <input type="text" class="form-control" id="yourFirstName" placeholder="First name" ng-model="firstName">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                <div class="form-group">
-                                    <label for="yourLastName" class="control-label">Last Name</label>
-                                    <input type="text" class="form-control" id="yourLastName" placeholder="Last name" ng-model="lastName">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                <div class="form-group">
-                                    <label for="yourPhone" class="control-label">Phone</label>
-                                    <input type="text" class="form-control" id="yourPhone" placeholder="(XXX)XXX-XXXX" ng-model="phone">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                <div class="form-group">
-                                    <label for="yourEmail" class="control-label">Email address</label>
-                                    <input type="email" class="form-control" id="yourEmail" placeholder="Your Email Address" ng-model="email">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                <label for="optionsGender" class="control-label">Gender</label>
-                                <!--<div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsGender" class="disabled" value="Male" ng-model="gender"> Male  ng-disabled="marriableStatus != 'single'"
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsGender" value="Female" ng-model="gender" ng-disabled="marriableStatus != 'single'"> Female
-                                    </label>
-                                </div>-->
-                                <div class="btn-group" id="optionsGender" ng-model="gender">
-                                    <button type="button" name="optionsGender1" class="btn btn-warning">Male</button>
-                                    <button type="button" name="optionsGender2" class="btn btn-warning">Female</button>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                <label for="optionsStatus" class="control-label">Status</label>
-                                <!--<div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsStatus" id="optionsRadios1" value="single" ng-model="marriableStatus"> Single
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsStatus" id="optionsRadios2" value="married" ng-model="marriableStatus"> Married
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsStatus" id="optionsRadios3" value="has partner" ng-model="marriableStatus"> Partnership
-                                    </label>
-                                </div>-->
-                                <div class="btn-group" id="optionsStatus" ng-model="marriableStatus">
-                                    <button type="button" id="optionsRadios1" name="optionsStatus" class="btn btn-info">Single</button>
-                                    <button type="button" id="optionsRadios2" name="optionsStatus" class="btn btn-info">Married</button>
-                                    <button type="button" id="optionsRadios3" name="optionsStatus" class="btn btn-info">Partnership</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                <div class="form-group">
-                                    <label for="sel1">How many children under 18?:</label>
-                                    <!--<select class="form-control" id="sel1" ng-model="childrenCount">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5+</option>
-                                    </select>-->
-                                    <div class="btn-group" id="sel1" ng-model="childrenCount">
-                                        <button type="button" name="childrenCount1" class="btn btn-default">1</button>
-                                        <button type="button" name="childrenCount2" class="btn btn-default">2</button>
-                                        <button type="button" name="childrenCount3" class="btn btn-default">3</button>
-                                        <button type="button" name="childrenCount4" class="btn btn-default">4</button>
-                                        <button type="button" name="childrenCount5" class="btn btn-default">5+</button>
-                                    </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                &nbsp;
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                &nbsp;
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="alert-info padding15 margin15_b">
+                            <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                    &nbsp;
+                                    <div class="form-group">
+                                        <label for="yourFirstName" class="control-label">First Name</label>
+                                        <input type="text" class="form-control" id="yourFirstName" placeholder="First name" ng-model="firstName">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="yourLastName" class="control-label">Last Name</label>
+                                        <input type="text" class="form-control" id="yourLastName" placeholder="Last name" ng-model="lastName">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="yourPhone" class="control-label">Phone</label>
+                                        <input type="text" class="form-control" id="yourPhone" placeholder="(XXX)XXX-XXXX" ng-model="phone">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                <button type="submit" class="btn btn-lg btn-block btn-custom" ng-click="submit()">Submit</button>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="yourEmail" class="control-label">Email address</label>
+                                        <input type="email" class="form-control" id="yourEmail" placeholder="Your Email Address" ng-model="email">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <label for="optionsGender" class="control-label">Gender</label><br/>
+                                    <!--<div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsGender" class="disabled" value="Male" ng-model="gender"> Male  ng-disabled="marriableStatus != 'single'"
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsGender" value="Female" ng-model="gender" ng-disabled="marriableStatus != 'single'"> Female
+                                        </label>
+                                    </div>-->
+                                    <div class="btn-group" id="optionsGender" ng-model="gender">
+                                        <button type="button" name="optionsGender1" class="btn btn-warning">Male</button>
+                                        <button type="button" name="optionsGender2" class="btn btn-warning">Female</button>
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <label for="optionsStatus" class="control-label">Status</label> <br/>
+                                    <!--<div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsStatus" id="optionsRadios1" value="single" ng-model="marriableStatus"> Single
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsStatus" id="optionsRadios2" value="married" ng-model="marriableStatus"> Married
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsStatus" id="optionsRadios3" value="has partner" ng-model="marriableStatus"> Partnership
+                                        </label>
+                                    </div>-->
+                                    <div class="btn-group" id="optionsStatus" ng-model="marriableStatus">
+                                        <button type="button" id="optionsRadios1" name="optionsStatus" class="btn btn-warning">Single</button>
+                                        <button type="button" id="optionsRadios2" name="optionsStatus" class="btn btn-warning">Married</button>
+                                        <button type="button" id="optionsRadios3" name="optionsStatus" class="btn btn-warning">Partnership</button>
+                                    </div>
+                                    <br />
+                                </div>
                             </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                &nbsp;
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="sel1">How many children under 18?:</label><br/>
+                                        <!--<select class="form-control" id="sel1" ng-model="childrenCount">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5+</option>
+                                        </select>-->
+                                        <div class="btn-group" id="sel1" ng-model="childrenCount">
+                                            <button type="button" name="childrenCount1" class="btn btn-warning">1</button>
+                                            <button type="button" name="childrenCount2" class="btn btn-warning">2</button>
+                                            <button type="button" name="childrenCount3" class="btn btn-warning">3</button>
+                                            <button type="button" name="childrenCount4" class="btn btn-warning">4</button>
+                                            <button type="button" name="childrenCount5" class="btn btn-warning">5+</button>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <button type="submit" class="btn btn-lg btn-block btn-custom" ng-click="submit()">Submit</button>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <br />
                             </div>
                         </div>
-                        <br />
                     </div>
+
                 </div>
             </div>
         </div>
