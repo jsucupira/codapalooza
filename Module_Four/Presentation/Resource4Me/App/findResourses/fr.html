@@ -1,17 +1,15 @@
 ﻿<div class="ng-cloak">
+    <nav class="navbar navbar-fixed-top  navbar-inverse">
+        
+        <a href="#/HP" title="Home Page" class="homeIconBkg pull-left"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
+        
+        <div id="home" class= "text-center text-white ">
+            <h4 class="">Resources4U</h4>
+        </div>
+    </nav>
     <input type="checkbox" ng-model="myValue" aria-label="Toggle ngShow" hidden="hidden">
     <section id="findresourcesme" ng-show="myValue" ng-cloak>
-        <nav class="navbar navbar-fixed-top  navbar-inverse">
-            <span class="pull-left">
-                <a href="#/HP" title="Home Page" class="btn btn-danger btn-sm"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
-            </span>
-            <span class="text-center">
-                <span class="navbar-header text-white nav-icons">
-                    Resources4u
-                </span>
-            </span>
-        </nav>
-        <p class="text-black">*** Please select any one or all above mentioned fields</p>
+        <div class="alert alert-info margin50_t"> <p class="text-black">*** Please select any one or all above mentioned fields</p></div>
         <div class="panel-group" id="accordion">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -84,20 +82,17 @@
 
     <!--Another page-->
     <div>
-       <br/>
-       <br/>
-       <br/>     
-        <div>
+        <div class="margin50_t">
             <div ng-repeat="Data in myData">
-                <div class="panel-group" id="accordion">
+                   <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title" id="providername">
-                                <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}">{{Data.resourceName}}</a>
-                                <span class="caret text-right"></span>
-                                <span class="label label-success badge pull-right">{{Data.details.length}}</span>
-                                <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}" class="pull-right">Results:</a>
-                            </h4>
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#{{Data.resourceIndex}}">
+                                <h4 class="panel-title" id="providername">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}">{{Data.resourceName}}</a>
+                                    <span class="caret text-right"></span>
+                                    <span class="label label-success badge pull-right">{{Data.details.length}}</span>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}" class="pull-right">Results:</a>
+                                </h4>
                         </div>
                         <div id="{{Data.resourceIndex}}" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -152,14 +147,9 @@
                                             <p id="service_offered" class="text-black"> AIDS/Drug Assistance Programs,Case/Care Management,Education, Employment, Food,Material Goods,Personal Enrichment, Temporary Financial Assistance, Transportation</p>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
-                                            &nbsp;
-                                        </div>
-                                         <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
-                                                <a href="/#/UserInfo" class="btn btn-lg btn-custom text-white">Apply for Resource </a>
-                                            </div>
-                                        </div>
+                                    <div class="row text-center">
+                                        <a href="/#/UserInfo" class="btn btn-lg btn-custom text-white">Apply for Resource </a>
+                                    </div>
                                 </div>
                                 <br />
                             </div>

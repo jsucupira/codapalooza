@@ -1,55 +1,53 @@
 ﻿<section ng-hide="isThankYou">
     <nav class="navbar navbar-fixed-top  navbar-inverse">
-        <span class="pull-left">
-            <a href="#/HP" title="Home Page" class="btn btn-danger btn-sm"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
-        </span>
-        <span class="center-block">
-            <span class="navbar-header text-white nav-icons">
-                Resources4u
-            </span>
-        </span>
+
+        <a href="#/HP" title="Home Page" class="homeIconBkg pull-left"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
+
+        <div id="home" class="text-center text-white ">
+            <h4 class="">Resources4U</h4>
+        </div>
     </nav>
     <form>
-        <div class="panel-group" id="accordion">
+        <div class="panel-group margin50_t" id="accordion">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title" id="providername">
                         <a data-toggle="collapse" data-parent="#accordion" href="">Application</a>
-                        <span class="caret text-right"></span>
                     </h4>
                 </div>
                 <div id="application" class="panel-collapse collapse in">
                     <div class="panel-body">
                         <div class="alert-info padding15 margin15_b">
+                            <div class="text-black">* - Required</div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <div class="form-group">
-                                        <label for="yourFirstName" class="control-label">First Name</label>
-                                        <input type="text" class="form-control" id="yourFirstName" placeholder="First name" ng-model="firstName">
+                                        <label for="yourFirstName" class="control-label">First Name*</label>
+                                        <input type="text" class="form-control" id="yourFirstName" placeholder="First name" required  ng-model="firstName">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <div class="form-group">
-                                        <label for="yourLastName" class="control-label">Last Name</label>
-                                        <input type="text" class="form-control" id="yourLastName" placeholder="Last name" ng-model="lastName">
+                                        <label for="yourLastName" class="control-label">Last Name*</label>
+                                        <input type="text" class="form-control" id="yourLastName" placeholder="Last name" required ng-model="lastName">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <div class="form-group">
-                                        <label for="yourPhone" class="control-label">Phone</label>
-                                        <input type="text" class="form-control" id="yourPhone" placeholder="(XXX)XXX-XXXX" ng-model="phone">
+                                        <label for="yourPhone" class="control-label">Phone*</label>
+                                        <input type="text" class="form-control" id="yourPhone" placeholder="(XXX)XXX-XXXX" required ng-model="phone">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <div class="form-group">
-                                        <label for="yourEmail" class="control-label">Email address</label>
-                                        <input type="email" class="form-control" id="yourEmail" placeholder="Your Email Address" ng-model="email">
+                                        <label for="yourEmail" class="control-label">Email address*</label>
+                                        <input type="email" class="form-control" id="yourEmail" placeholder="Your Email Address" required ng-model="email">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                    <label for="optionsGender" class="control-label">Gender</label><br/>
+                                    <label for="optionsGender" class="control-label">Gender*</label><br />
                                     <!--<div class="radio">
                                         <label>
                                             <input type="radio" name="optionsGender" class="disabled" value="Male" ng-model="gender"> Male  ng-disabled="marriableStatus != 'single'"
@@ -61,15 +59,15 @@
                                         </label>
                                     </div>-->
                                     <div class="btn-group" id="optionsGender" ng-model="gender">
-                                        <button type="button" name="optionsGender1" class="btn btn-warning">Male</button>
-                                        <button type="button" name="optionsGender2" class="btn btn-warning">Female</button>
+                                        <button type="button" name="optionsGender1" class="btn btn-default">Male</button>
+                                        <button type="button" name="optionsGender2" class="btn btn-default">Female</button>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                    <label for="optionsStatus" class="control-label">Status</label> <br/>
+                                    <label for="optionsStatus" class="control-label">Status*</label> <br />
                                     <!--<div class="radio">
-                                        <label>
+                                        <label>s
                                             <input type="radio" name="optionsStatus" id="optionsRadios1" value="single" ng-model="marriableStatus"> Single
                                         </label>
                                     </div>
@@ -84,9 +82,9 @@
                                         </label>
                                     </div>-->
                                     <div class="btn-group" id="optionsStatus" ng-model="marriableStatus">
-                                        <button type="button" id="optionsRadios1" name="optionsStatus" class="btn btn-warning">Single</button>
-                                        <button type="button" id="optionsRadios2" name="optionsStatus" class="btn btn-warning">Married</button>
-                                        <button type="button" id="optionsRadios3" name="optionsStatus" class="btn btn-warning">Partnership</button>
+                                        <button type="button" id="optionsRadios1" name="optionsStatus" class="btn btn-default">Single</button>
+                                        <button type="button" id="optionsRadios2" name="optionsStatus" class="btn btn-default">Married</button>
+                                        <button type="button" id="optionsRadios3" name="optionsStatus" class="btn btn-default">Partnership</button>
                                     </div>
                                     <br />
                                 </div>
@@ -94,7 +92,7 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <div class="form-group">
-                                        <label for="sel1">How many children under 18?:</label><br/>
+                                        <label for="sel1">How many children under 18?*</label><br />
                                         <!--<select class="form-control" id="sel1" ng-model="childrenCount">
                                             <option>1</option>
                                             <option>2</option>
@@ -103,20 +101,15 @@
                                             <option>5+</option>
                                         </select>-->
                                         <div class="btn-group" id="sel1" ng-model="childrenCount">
-                                            <button type="button" name="childrenCount1" class="btn btn-warning">1</button>
-                                            <button type="button" name="childrenCount2" class="btn btn-warning">2</button>
-                                            <button type="button" name="childrenCount3" class="btn btn-warning">3</button>
-                                            <button type="button" name="childrenCount4" class="btn btn-warning">4</button>
-                                            <button type="button" name="childrenCount5" class="btn btn-warning">5+</button>
+                                            <button type="button" name="childrenCount1" class="btn btn-default">1</button>
+                                            <button type="button" name="childrenCount2" class="btn btn-default">2</button>
+                                            <button type="button" name="childrenCount3" class="btn btn-default">3</button>
+                                            <button type="button" name="childrenCount4" class="btn btn-default">4</button>
+                                            <button type="button" name="childrenCount5" class="btn btn-default">5+</button>
                                         </div>
                                     </div>
-                                    <br/>
-                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                        &nbsp;
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                        &nbsp;
-                                    </div>
+                                    <br />
+                           
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
@@ -125,7 +118,9 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                        <button type="submit" class="btn btn-lg btn-block btn-custom" ng-click="submit()">Submit</button>
+                                        <div class="padding1o_lr">
+                                            <button type="submit" class="btn btn-lg btn-block btn-custom" ng-click="submit()">Submit</button>
+                                        </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                         &nbsp;
@@ -144,39 +139,47 @@
 
 <section ng-show="isThankYou" class="appBkg">
     <nav class="navbar navbar-fixed-top  navbar-inverse">
-        <span class="pull-left">
-            <a href="#/HP" title="Home Page" class="btn btn-danger btn-sm"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
-        </span>
-        <span class="center-block">
-            <span class="navbar-header text-white nav-icons">
-                Resources4u
-            </span>
-        </span>
-    </nav>
-    <div class="row">
-        <div class="well">
-            <div class="text-center">
-                <h3>Thank you!</h3>
-                <br>
-            </div>
-            <p>Your information has been submitted to&nbsp;<span id="providername">Catholic Charities</span>.</p>
-            <br>
-            <p>Arrive by&nbsp;<span id="timearrive"><strong class="text-danger">5PM</strong></span>&nbsp; to keep reservation</p>
-            <br>
-            <h5 id="providerlocation"><strong>Catholic Charities - Mercy Apartments</strong></h5>
-            <br>
-            <a href="#">Get Directions</a>
-            <div>
-                <br>
-                <p id="streetname">10049 N Florida Avenue</p>
-                <p id="citystatezip">Tampa,FL 33612</p>
-                <p>Phone: <span id="phone">813-375-3933</span></p>
-                <p>Hours: <span id="timeopen">8:00 AM - 8:00 PM</span></p>
-            </div>
 
+        <a href="#/HP" title="Home Page" class="homeIconBkg pull-left"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
+
+        <div id="home" class="text-center text-white ">
+            <h4 class="">Resources4U</h4>
         </div>
-        <div class="text-center">
-            <button type="submit" class="btn btn-lg btn-custom btn-block" ng-click="done()">DONE</button>
+    </nav>
+    <div class="panel-group margin50_t" id="accordionTY">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title" id="providername">
+                    <a data-toggle="collapse" data-parent="#accordionTY" href="">Thank you!</a>
+                </h4>
+            </div>
+            <div id="applicationTY" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="alert-info padding15 margin15_b">
+                        <p class="text-black" >Your information has been submitted to&nbsp;<span id="providername">Catholic Charities</span>.</p>
+                        <br>
+                        <p>Arrive by&nbsp;<span id="timearrive"><strong class="text-danger">5PM</strong></span>&nbsp; to keep reservation</p>
+                        <br>
+                        <h5 id="providerlocation" class="text-black" ><strong>Catholic Charities - Mercy Apartments</strong></h5>
+                        <br>
+                        <a href="https://www.google.com/maps/dir/2202+N+Westshore+Blvd,+Tampa,+FL/10049+N+Florida+Ave,+Tampa,+FL+33612/@27.9979656,-82.5264403,13z/am=t/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x88c2c256c7056283:0x7e78f42f1febeb49!2m2!1d-82.5247951!2d27.9606589!1m5!1m1!1s0x88c2c6d92e0de847:0x82c5615abbb3c32f!2m2!1d-82.4577919!2d28.042135"><i class="glyphicon glyphicon-map-marker"></i>&nbsp; Get Directions</a>
+                        <div>
+                            <br>
+                            <p>Address:</p>
+                            <p id="streetname"class="text-black">10049 N Florida Avenue</p>
+                            <p id="citystatezip" class="text-black">Tampa,FL 33612</p>
+                            <p>Phone: <span id="phone" class="text-black" >813-375-3933</span></p>
+                            <p>Hours: <span id="timeopen" class="text-black">8:00 AM - 8:00 PM</span></p>
+                        </div>
+
+
+                        <div class="">
+                            <button type="submit" class="btn btn-lg btn-custom " ng-click="done()">DONE</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
