@@ -116,7 +116,8 @@
         }
 
 
-        function getProviders(requestObj) {
+      function getProviders(requestObj) {
+          
             return $http.post(appUrl + "providers",
                     requestObj
                 )
@@ -124,8 +125,9 @@
                     //   alert("getProviders");
                     return shapeResourceData(response.data);
                 })
-                .catch(function(message) {
-                    exception.catcher('XHR Failed for GetDetails')(message.data.ExceptionMessage);
+                .catch(function (message) {
+                    //XHR Failed for GetDetails....Message is show for users to easily understand the issue.
+                    exception.catcher('Unable to get the list for providers due to system issue. Please try after sometime or call 211 for urgent help.')(message.data.ExceptionMessage);
                 });
         }
 

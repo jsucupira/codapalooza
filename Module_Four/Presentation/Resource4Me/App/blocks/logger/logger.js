@@ -21,7 +21,7 @@
 
         function error(message, data, title) {
             
-            toastr.error(message, data, { timeOut: 0, closeButton: true, extendedTimeOut: 0 }); //, { timeout: 0, extendedTimeOut: 0,  "closeButton": true });
+            toastr.error(message, data, { timeOut: 0, closeButton: true, extendedTimeOut: 10000, positionClass: "toast-bottom-center", }); //, { timeout: 0, extendedTimeOut: 0,  "closeButton": true });
             $log.error('Error: ' + message, data);
         }
 

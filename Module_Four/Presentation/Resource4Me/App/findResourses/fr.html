@@ -78,12 +78,20 @@
                 <button type="submit" class="btn btn-lg btn-custom" ng-click="Update()" value="Search"><i class="glyphicon glyphicon-search "></i>&nbsp; Search </button>
             </div>
         </div>
+        <div class="alert-warning navbar-fixed-bottom text-center">
+            <br />
+            <i class="glyphicon glyphicon-sort"> <span><a href="#">Directions</a></span></i>&nbsp;&nbsp;
+            <i class="glyphicon glyphicon-earphone"><span> <a href="tel:18004181447">Contact</a></span></i> &nbsp;&nbsp;
+            <i class="glyphicon glyphicon-grain"><span> <a href="#">Eligibility</a></span></i>
+        </div>
     </section>
 
     <!--Another page-->
-    <div>
+    <div ng-hide="myValue">
         <div class="margin50_t">
-            <div ng-repeat="Data in myData">
+            <div class="loader center-block margin50_t" ng-hide="dataLoaded" >
+            </div>
+            <div ng-repeat="Data in myData" ng-show="dataLoaded == true" ng-hide="showException == true" >
                    <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#{{Data.resourceIndex}}">

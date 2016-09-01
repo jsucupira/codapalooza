@@ -20,6 +20,7 @@
 
         $scope.Update = function () {
             $scope.myValue = false;
+            $scope.dataLoaded = false;
             navigator.geolocation.getCurrentPosition(success, error);
 
             var userSelection = ["CLOTHING", "FOOD"];
@@ -32,6 +33,7 @@
             requestObj.limit = 20;
             return dataservice.getProviders(requestObj).then(function (response) {
                 $scope.myData = response;
+                $scope.dataLoaded = true;
             }).catch(function (err) {
                 logger.error('Call to API failed' + err);
             });
