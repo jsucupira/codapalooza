@@ -7,6 +7,49 @@
 
     function FindResource(dataservice, logger, $scope, $location) {
         $scope.myValue = true;
+        $(".btn-group > .btn").click(function () {
+            $(this).addClass("btn-primary active").siblings().removeClass("btn-primary active");
+        });
+        $scope.clothing = "";
+        $scope.food = "";
+        $scope.shelter = "";
+        $scope.domVol = "";
+        $scope.hygProducts = "";
+        $scope.medical = "";
+
+        $scope.getClothingrVal = function (event) {
+            console.log($scope.clothing);
+            console.log(event.currentTarget.value);
+            $scope.clothing = event.currentTarget.value;
+        }
+        $scope.getfoodVal = function (event) {
+            console.log($scope.food);
+            console.log(event.currentTarget.value);
+            $scope.food = event.currentTarget.value;
+        }
+        $scope.getshelterVal = function (event) {
+            console.log($scope.shelter);
+            console.log(event.currentTarget.value);
+            $scope.shelter = event.currentTarget.value;
+        }
+        $scope.getdomVolVal = function (event) {
+            console.log($scope.domVol);
+            console.log(event.currentTarget.value);
+            $scope.domVol = event.currentTarget.value;
+        }
+        $scope.gethygProductsVal = function (event) {
+            console.log($scope.hygProducts);
+            console.log(event.currentTarget.value);
+            $scope.hygProducts = event.currentTarget.value;
+        }
+        $scope.getmedicalVal = function (event) {
+            console.log($scope.medical);
+            console.log(event.currentTarget.value);
+            $scope.medical = event.currentTarget.value;
+        }
+
+
+
 
       //  getDataFromAPI();
       
@@ -22,8 +65,11 @@
             $scope.myValue = false;
             $scope.dataLoaded = false;
             navigator.geolocation.getCurrentPosition(success, error);
-
-            var userSelection = ["CLOTHING", "FOOD"];
+           
+            var userSelection = [ $scope.clothing,
+                                  $scope.food,
+                                  $scope.shelter
+                                ];
 
 
             var requestObj = new Object();

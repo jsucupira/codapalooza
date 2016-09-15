@@ -10,74 +10,109 @@
     <input type="checkbox" ng-model="myValue" aria-label="Toggle ngShow" hidden="hidden">
     <section id="findresourcesme" ng-show="myValue" ng-cloak>
         <div class="alert alert-info margin50_t"> <p class="text-black">*** Please select any one or all above mentioned fields</p></div>
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapse1">RESOURCES</a>
-                        <span class="caret text-right"></span>
-                    </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <div class="checkbox checkbox-info">
-                                <label>
-                                    <input type="checkbox"> CLOTHING
-                                </label>
-                            </div>
-                            <div class="checkbox checkbox-info">
-                                <label>
-                                    <input type="checkbox"> FOOD
-                                </label>
-                            </div>
-                            <div class="checkbox checkbox-info">
-                                <label>
-                                    <input type="checkbox"> SHELTER
-                                </label>
-                            </div>
-                        </div>
-
+        <form id="resouceForm">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapse1">RESOURCES</a>
+                            <span class="caret text-right"></span>
+                        </h4>
                     </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapse2">
-                            HUMAN SERVICES
-                        </a><span class="caret"></span>
-                    </h4>
-                </div>
-                <div id="collapse2" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <div class="checkbox checkbox-info">
-                                <label>
-                                    <input type="checkbox"> DOMESTIC VIOLENCE
-                                </label>
-                            </div>
-                            <div class="checkbox checkbox-info">
-                                <label>
-                                    <input type="checkbox"> HYGIENE PRODUCTS
-                                </label>
-                            </div>
-                            <div class="checkbox checkbox-info">
-                                <label>
-                                    <input type="checkbox"> MEDICAL
-                                </label>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <span class="btn-group" id="optionsClothing" ng-model="clothing">
+                                        <button type="button" name="optionsClothing" ng-model="clothing" value="CLOTHING" ng-click="getClothingrVal($event)" class="btn btn-primary active">Yes</button>
+                                        <button type="button" name="optionsClothing" ng-model="clothing" value="" ng-click="getClothingrVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        CLOTHING
+                                    </span>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <span class="btn-group" id="optionsFood" ng-model="food">
+                                        <button type="button" name="optionsFood" ng-model="food" value="FOOD" ng-click="getfoodVal($event)" class="btn btn-primary active">Yes</button>
+                                        <button type="button" name="optionsFood" ng-model="food" value="" ng-click="getfoodVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        FOOD
+                                    </span>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <span class="btn-group" id="optionsShelter" ng-model="shelter">
+                                        <button type="button" name="optionsShelter" ng-model="shelter" value="SHELTER" ng-click="getshelterVal($event)" class="btn btn-primary active">Yes</button>
+                                        <button type="button" name="optionsShelter" ng-model="shelter" value="" ng-click="getshelterVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        SHELTER
+                                    </span>
+                                </div>
                             </div>
 
                         </div>
                     </div>
                 </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapse2">
+                                HUMAN SERVICES
+                            </a><span class="caret"></span>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <span class="btn-group" id="optionsdomVol" ng-model="domVol">
+                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="DOMESTIC VIOLENCE" ng-click="getdomVolVal($event)" class="btn btn-primary active">Yes</button>
+                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="" ng-click="getdomVolVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        DOMESTIC VIOLENCE
+                                    </span>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <span class="btn-group" id="hygProducts" ng-model="domVol">
+                                        <button type="button" name="hygProducts" ng-model="domVol" value="HYGIENE PRODUCTS" ng-click="gethygProductsVal($event)" class="btn btn-primary active">Yes</button>
+                                        <button type="button" name="hygProducts" ng-model="domVol" value="" ng-click="gethygProductsVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        HYGIENE PRODUCTS
+                                    </span>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <span class="btn-group" id="medical" ng-model="domVol">
+                                        <button type="button" name="medical" ng-model="domVol" value="MEDICAL" ng-click="getmedicalVal($event)" class="btn btn-primary active">Yes</button>
+                                        <button type="button" name="medical" ng-model="domVol" value="" ng-click="getmedicalVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        MEDICAL
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-lg btn-custom" ng-click="Update()" value="Search"><i class="glyphicon glyphicon-search "></i>&nbsp; Search </button>
+                </div>
             </div>
-            <br/>
-            
-            <div class="text-center">
-                <button type="submit" class="btn btn-lg btn-custom" ng-click="Update()" value="Search"><i class="glyphicon glyphicon-search "></i>&nbsp; Search </button>
-            </div>
-        </div>
+        </form>
         <div class="alert-warning navbar-fixed-bottom text-center">
             <br />
             <i class="glyphicon glyphicon-sort"> <span><a href="#">Directions</a></span></i>&nbsp;&nbsp;

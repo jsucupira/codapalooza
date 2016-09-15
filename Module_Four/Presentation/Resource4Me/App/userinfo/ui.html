@@ -7,7 +7,7 @@
             <h4 class="">Resources4U</h4>
         </div>
     </nav>
-    <form>
+    <form id="AppForm" name="AppForm">
         <div class="panel-group margin50_t" id="accordion">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -18,36 +18,53 @@
                 <div id="application" class="panel-collapse collapse in">
                     <div class="panel-body">
                         <div class="alert-info padding15 margin15_b">
-                            <div class="text-black">* - Required</div>
+                            <div class="text-black"><span class="text-danger">*</span> - Required</div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <div class="form-group">
-                                        <label for="yourFirstName" class="control-label">First Name*</label>
-                                        <input type="text" class="form-control" id="yourFirstName" placeholder="First name" required  ng-model="firstName" autofocus>
+                                        <label for="yourFirstName" class="control-label">First Name<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="yourFirstName" name="firstName"  placeholder="First name" required  ng-model="firstName" autofocus>
+                                        <div class="alert alert-danger"
+                                             ng-show="AppForm.firstName.$error.required && AppForm.firstName.$dirty">
+                                            Please enter your last name!
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <div class="form-group">
-                                        <label for="yourLastName" class="control-label">Last Name*</label>
-                                        <input type="text" class="form-control" id="yourLastName" placeholder="Last name" required ng-model="lastName">
+                                        <label for="yourLastName" class="control-label">Last Name<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="yourLastName" name="lastName"  placeholder="Last name" required ng-model="lastName">
+                                        <div class="alert alert-danger"
+                                             ng-show="AppForm.lastName.$error.required && AppForm.lastName.$dirty">
+                                            Please enter your last name!
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <div class="form-group">
-                                        <label for="yourPhone" class="control-label">Phone*</label>
-                                        <input type="text" class="form-control" id="yourPhone" placeholder="(XXX)XXX-XXXX" required ng-model="phone">
+                                        <label for="yourPhone" class="control-label">Phone<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="yourPhone"  name="yourPhone" placeholder="(XXX)XXX-XXXX" maxlength="14" required ng-model="phone">
+                                        <div class="alert alert-danger"
+                                             ng-show="AppForm.yourPhone.$error.required && AppForm.yourPhone.$dirty">
+                                            Please enter your last name!
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <div class="form-group">
-                                        <label for="yourEmail" class="control-label">Email address*</label>
-                                        <input type="email" class="form-control" id="yourEmail" placeholder="Your Email Address" required ng-model="email">
+                                        <label for="yourEmail" class="control-label">Email address<span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="yourEmail" name="yourEmail"  placeholder="myemail@example.com" required ng-model="email">
+                                        <div class="alert alert-danger"
+                                             ng-show="AppForm.yourEmail.$error.required && AppForm.yourEmail.$dirty">
+                                            Please enter your last name!
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                    <label for="optionsGender" class="control-label">Gender*</label><br />
+                                    <label for="optionsGender" class="control-label">Gender<span class="text-danger">*</span></label><br />
                                     <!--<div class="radio">
                                         <label>
                                             <input type="radio" name="optionsGender" class="disabled" value="Male" ng-model="gender"> Male  ng-disabled="marriableStatus != 'single'"
@@ -59,13 +76,13 @@
                                         </label>
                                     </div>-->
                                     <div class="btn-group" id="optionsGender" ng-model="gender">
-                                        <button type="button" name="optionsGender1" class="btn btn-default">Male</button>
-                                        <button type="button" name="optionsGender2" class="btn btn-default">Female</button>
+                                        <button type="button" name="optionsGender" ng-model="gender"  value="Male" ng-click="getGenderVal($event)" class="btn btn-default">Male</button>
+                                        <button type="button" name="optionsGender" ng-model="gender"  value="Female" ng-click="getGenderVal($event)" class="btn btn-default">Female</button>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                    <label for="optionsStatus" class="control-label">Status*</label> <br />
+                                    <label for="optionsStatus" class="control-label">Status<span class="text-danger">*</span></label> <br />
                                     <!--<div class="radio">
                                         <label>s
                                             <input type="radio" name="optionsStatus" id="optionsRadios1" value="single" ng-model="marriableStatus"> Single
@@ -82,9 +99,9 @@
                                         </label>
                                     </div>-->
                                     <div class="btn-group" id="optionsStatus" ng-model="marriableStatus">
-                                        <button type="button" id="optionsRadios1" name="optionsStatus" class="btn btn-default">Single</button>
-                                        <button type="button" id="optionsRadios2" name="optionsStatus" class="btn btn-default">Married</button>
-                                        <button type="button" id="optionsRadios3" name="optionsStatus" class="btn btn-default">Partnership</button>
+                                        <button type="button" id="optionsRadios" name="optionsStatus" ng-model="marriageStatus"  value="Single" ng-click="getStatusVal($event)" class="btn btn-default">Single</button>
+                                        <button type="button" id="optionsRadios" name="optionsStatus" ng-model="marriageStatus"  value="Married" ng-click="getStatusVal($event)" class="btn btn-default">Married</button>
+                                        <button type="button" id="optionsRadios" name="optionsStatus" ng-model="marriageStatus"  value="Partnership" ng-click="getStatusVal($event)" class="btn btn-default">Partnership</button>
                                     </div>
                                     <br />
                                 </div>
@@ -92,7 +109,7 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <div class="form-group">
-                                        <label for="sel1">How many children under 18?*</label><br />
+                                        <label for="sel1">How many children under 18?<span class="text-danger">*</span></label><br />
                                         <!--<select class="form-control" id="sel1" ng-model="childrenCount">
                                             <option>1</option>
                                             <option>2</option>
@@ -101,12 +118,12 @@
                                             <option>5+</option>
                                         </select>-->
                                         <div class="btn-group" id="sel1" ng-model="childrenCount">
-                                            <button type="button" name="childrenCount1" class="btn btn-default">0</button>
-                                            <button type="button" name="childrenCount1" class="btn btn-default">1</button>
-                                            <button type="button" name="childrenCount2" class="btn btn-default">2</button>
-                                            <button type="button" name="childrenCount3" class="btn btn-default">3</button>
-                                            <button type="button" name="childrenCount4" class="btn btn-default">4</button>
-                                            <button type="button" name="childrenCount5" class="btn btn-default">5+</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="0" ng-click="getChildrenVal($event)" class="btn btn-default">0</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="1" ng-click="getChildrenVal($event)" class="btn btn-default">1</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="2" ng-click="getChildrenVal($event)" class="btn btn-default">2</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="3" ng-click="getChildrenVal($event)" class="btn btn-default">3</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="4" ng-click="getChildrenVal($event)" class="btn btn-default">4</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="5+" ng-click="getChildrenVal($event)" class="btn btn-default">5+</button>
                                         </div>
                                     </div>
                                     <br />
@@ -120,7 +137,7 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                         <div class="padding1o_lr">
-                                            <button type="submit" class="btn btn-lg btn-block btn-custom" ng-click="submit()">Submit</button>
+                                            <button type="submit" class="btn btn-lg btn-block btn-custom" ng-click="submitForm()" ng-disabled="AppForm.$invalid">Submit</button>
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
