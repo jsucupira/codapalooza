@@ -16,6 +16,7 @@
         //var baseUrl = "http://localhost:51319/";
 
         var appUrl = 'http://tampainnovationwebservices.azurewebsites.net/';
+        //var appUrl = 'http://localhost:51319/';
 
         function getEarnings() {
             return $http.get(baseUrl + 'api/Values/Get',

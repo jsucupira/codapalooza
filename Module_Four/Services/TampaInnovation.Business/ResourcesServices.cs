@@ -54,6 +54,7 @@ namespace TampaInnovation.Business
 
             List<ProviderResult> filteredList = new List<ProviderResult>();
             LatLong latLong;
+            searchRequest.Filters = searchRequest.Filters.Where(t => !string.IsNullOrEmpty(t)).ToList();
             foreach (ProviderResult providerResult in providerResults)
             {
                 foreach (string filter in searchRequest.Filters)
@@ -61,13 +62,31 @@ namespace TampaInnovation.Business
                     providerResult.ProvidedServices = providerResult.ProvidedServices.Distinct(new ServicesEquality()).ToList();
                     providerResult.ContactInformations = providerResult.ContactInformations.Distinct(new ContactEquality()).ToList();
 
-                    if (filter.Any())
+                    if (providerResult.ProvidedServices.Any(t => t.Name.ToLower().Contains(filter.ToLower())))
                     {
-                        if (providerResult.ProvidedServices.Any(t => t.Name.ToLower().Contains(filter.ToLower())))
-                            filteredList.Add(providerResult);
-                    }
-                    else
                         filteredList.Add(providerResult);
+                    }
+                }
+            }
+
+            foreach (ProviderResult providerResult in filteredList)
+            {
+                List<Services> listToRemove = new List<Services>();
+                foreach (Services providedService in providerResult.ProvidedServices)
+                {
+                    bool contain = false;
+                    foreach (var filter in searchRequest.Filters)
+                    {
+                        if (providedService.Name.Equals(filter, StringComparison.CurrentCultureIgnoreCase))
+                            contain = true;
+                    }
+                    if (!contain)
+                        listToRemove.Add(providedService);
+                }
+
+                foreach (Services service in listToRemove)
+                {
+                    providerResult.ProvidedServices.RemoveAll(t => t.Name == service.Name && t.Id == service.Id);
                 }
             }
 
