@@ -9,7 +9,7 @@
     </nav>
     <input type="checkbox" ng-model="myValue" aria-label="Toggle ngShow" hidden="hidden">
     <section id="findresourcesme" ng-show="myValue" ng-cloak>
-        <div class="alert alert-info margin50_t"> <p class="text-black">*** Please select any one or all above mentioned fields</p></div>
+        <div class="alert alert-info margin50_t"> <p class="text-black">Please select any resource categories.</p></div>
         <form id="resouceForm">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
@@ -23,8 +23,8 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <div class="row">
-                                    <span class="btn-group" id="optionsClothing" ng-model="clothing">
-                                        <button type="button" name="optionsClothing" ng-model="clothing" value="CLOTHING" ng-click="getClothingrVal($event)" class="btn btn-primary active">Yes</button>
+                                    <span class="btn-group padding15_l" id="optionsClothing" ng-model="clothing">
+                                        <button type="button" name="optionsClothing" ng-model="clothing" value="CLOTHING" ng-click="getClothingrVal($event)" class="btn btn-primaryCustom">Yes</button>
                                         <button type="button" name="optionsClothing" ng-model="clothing" value="" ng-click="getClothingrVal($event)" class="btn btn-default">No</button>
                                     </span>
                                     &nbsp;&nbsp;
@@ -34,8 +34,8 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <span class="btn-group" id="optionsFood" ng-model="food">
-                                        <button type="button" name="optionsFood" ng-model="food" value="FOOD" ng-click="getfoodVal($event)" class="btn btn-primary active">Yes</button>
+                                    <span class="btn-group padding15_l" id="optionsFood" ng-model="food">
+                                        <button type="button" name="optionsFood" ng-model="food" value="FOOD" ng-click="getfoodVal($event)" class="btn btn-primaryCustom">Yes</button>
                                         <button type="button" name="optionsFood" ng-model="food" value="" ng-click="getfoodVal($event)" class="btn btn-default">No</button>
                                     </span>
                                     &nbsp;&nbsp;
@@ -45,8 +45,8 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <span class="btn-group" id="optionsShelter" ng-model="shelter">
-                                        <button type="button" name="optionsShelter" ng-model="shelter" value="SHELTER" ng-click="getshelterVal($event)" class="btn btn-primary active">Yes</button>
+                                    <span class="btn-group padding15_l" id="optionsShelter" ng-model="shelter">
+                                        <button type="button" name="optionsShelter" ng-model="shelter" value="SHELTER" ng-click="getshelterVal($event)" class="btn btn-primaryCustom">Yes</button>
                                         <button type="button" name="optionsShelter" ng-model="shelter" value="" ng-click="getshelterVal($event)" class="btn btn-default">No</button>
                                     </span>
                                     &nbsp;&nbsp;
@@ -71,8 +71,8 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <div class="row">
-                                    <span class="btn-group" id="optionsdomVol" ng-model="domVol">
-                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="DOMESTIC VIOLENCE" ng-click="getdomVolVal($event)" class="btn btn-primary active">Yes</button>
+                                    <span class="btn-group padding15_l" id="optionsdomVol" ng-model="domVol">
+                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="DOMESTIC VIOLENCE" ng-click="getdomVolVal($event)" class="btn btn-primaryCustom">Yes</button>
                                         <button type="button" name="optionsdomVol" ng-model="domVol" value="" ng-click="getdomVolVal($event)" class="btn btn-default">No</button>
                                     </span>
                                     &nbsp;&nbsp;
@@ -82,9 +82,9 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <span class="btn-group" id="hygProducts" ng-model="domVol">
-                                        <button type="button" name="hygProducts" ng-model="domVol" value="HYGIENE PRODUCTS" ng-click="gethygProductsVal($event)" class="btn btn-primary active">Yes</button>
-                                        <button type="button" name="hygProducts" ng-model="domVol" value="" ng-click="gethygProductsVal($event)" class="btn btn-default">No</button>
+                                    <span class="btn-group padding15_l" id="hygProducts" ng-model="hygProducts">
+                                        <button type="button" name="hygProducts" ng-model="hygProducts" value="HYGIENE PRODUCTS" ng-click="gethygProductsVal($event)" class="btn btn-primaryCustom">Yes</button>
+                                        <button type="button" name="hygProducts" ng-model="hygProducts" value="" ng-click="gethygProductsVal($event)" class="btn btn-default">No</button>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span class="text-black">
@@ -93,9 +93,9 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <span class="btn-group" id="medical" ng-model="domVol">
-                                        <button type="button" name="medical" ng-model="domVol" value="MEDICAL" ng-click="getmedicalVal($event)" class="btn btn-primary active">Yes</button>
-                                        <button type="button" name="medical" ng-model="domVol" value="" ng-click="getmedicalVal($event)" class="btn btn-default">No</button>
+                                    <span class="btn-group padding15_l" id="medical" ng-model="medical">
+                                        <button type="button" name="medical" ng-model="medical" value="MEDICAL" ng-click="getmedicalVal($event)" class="btn btn-primaryCustom">Yes</button>
+                                        <button type="button" name="medical" ng-model="medical" value="" ng-click="getmedicalVal($event)" class="btn btn-default">No</button>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span class="text-black">

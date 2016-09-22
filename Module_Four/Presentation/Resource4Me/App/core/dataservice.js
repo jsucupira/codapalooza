@@ -42,18 +42,23 @@
                 });
         }
 
-      function shapeResourceData(data) {
-          var shapedData =   [{ resourceIndex: 'CLOT', resourceName: 'Clothing', details: [] },
+        function shapeResourceData(data, userSelection)
+        {
+         console.log(userSelection);
+         var shapedData =   [{ resourceIndex: 'CLOT', resourceName: 'Clothing', details: [] },
                               { resourceIndex: 'FOOD', resourceName: 'Food', details: [] },
                               { resourceIndex: 'SHEL', resourceName: 'Shelter', details: [] },
                               { resourceIndex: 'DOMV', resourceName: 'Domestic Violence', details: [] },
                               { resourceIndex: 'HYGP', resourceName: 'Hygiene Products', details: [] },
                               { resourceIndex: 'MEDI', resourceName: 'Medical', details: [] }];
 
-           function getIndex(resource) {
+          function getIndex(resource)
+          {
                for (var idx = 0; idx < shapedData.length; idx++) {
-                   if (shapedData[idx].resourceName === resource.name) {
-                        return idx;
+                   if (shapedData[idx].resourceName === resource.name ) 
+                   {
+                       // if (resoucesSelected[idx].toUpperCase() === resource.name.toUpperCase())
+                           return idx;
                    }
                }
                return -1;
@@ -116,14 +121,14 @@
         }
 
 
-      function getProviders(requestObj) {
+        function getProviders(requestObj, userSelection) {
           
             return $http.post(appUrl + "providers",
                     requestObj
                 )
                 .then(function(response) {
                     //   alert("getProviders");
-                    return shapeResourceData(response.data);
+                    return shapeResourceData(response.data, userSelection);
                 })
                 .catch(function (message) {
                     //XHR Failed for GetDetails....Message is show for users to easily understand the issue.

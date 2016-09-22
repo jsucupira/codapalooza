@@ -250,6 +250,14 @@ img {
     padding-left: 15px;
     padding-right: 15px
 }
+.padding15_l
+{
+    padding-left: 15px;
+}
+.padding15_r
+{
+    padding-right: 15px
+}
 
 .navbar{
     min-height:40px;
@@ -411,6 +419,22 @@ margin-left:0;
 .view-leave.view-leave-active {
   left:-100px;
   opacity:0;
+}
+
+/*.customColor{
+      background: linear-gradient(#1ebdbe, #107677);
+}*/
+
+.btn-primaryCustom {
+  background-image: -webkit-linear-gradient(top, #1ebdbe 0%, #107677 100%);
+  background-image:      -o-linear-gradient(top, #1ebdbe 0%, #107677 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1ebdbe), to(#107677));
+  background-image:         linear-gradient(to bottom, #1ebdbe 0%, #107677 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1ebdbe', endColorstr='#ff107677', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #107677;
+  color: #fff;
 }
 
 /* Loading animation */

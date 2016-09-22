@@ -8,14 +8,14 @@
     function FindResource(dataservice, logger, $scope, $location) {
         $scope.myValue = true;
         $(".btn-group > .btn").click(function () {
-            $(this).addClass("btn-primary active").siblings().removeClass("btn-primary active");
+            $(this).addClass("btn-primaryCustom").removeClass("btn-default").siblings().removeClass("btn-primaryCustom").addClass("btn-default");
         });
-        $scope.clothing = "";
-        $scope.food = "";
-        $scope.shelter = "";
-        $scope.domVol = "";
-        $scope.hygProducts = "";
-        $scope.medical = "";
+        $scope.clothing = "CLOTHING";
+        $scope.food = "FOOD";
+        $scope.shelter = "SHELTER";
+        $scope.domVol = "DOMESTIC VIOLENCE";
+        $scope.hygProducts = "HYGIENE PRODUCTS";
+        $scope.medical = "MEDICAL";
 
         $scope.getClothingrVal = function (event) {
             console.log($scope.clothing);
@@ -68,7 +68,10 @@
            
             var userSelection = [ $scope.clothing,
                                   $scope.food,
-                                  $scope.shelter
+                                  $scope.shelter,
+                                  $scope.domVol,
+                                  $scope.hygProducts,
+                                  $scope.medical
                                 ];
 
 
@@ -77,7 +80,7 @@
             requestObj.query = '28.053397' + ',' + '-82.4473383';
             requestObj.range = 25;
             requestObj.limit = 20;
-            return dataservice.getProviders(requestObj).then(function (response) {
+            return dataservice.getProviders(requestObj, userSelection).then(function (response) {
                 $scope.myData = response;
                 $scope.dataLoaded = true;
             }).catch(function (err) {

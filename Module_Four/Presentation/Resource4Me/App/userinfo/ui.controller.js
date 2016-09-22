@@ -11,7 +11,7 @@
         $scope.isThankYou = false;
 
         $(".btn-group > .btn").click(function () {
-            $(this).addClass("btn-primary active").siblings().removeClass("btn-primary active");
+            $(this).addClass("btn-primaryCustom").removeClass("btn-default").siblings().removeClass("btn-primaryCustom").addClass("btn-default");
         });
 
 
