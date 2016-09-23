@@ -24,8 +24,8 @@
                             <div class="form-group">
                                 <div class="row">
                                     <span class="btn-group padding15_l" id="optionsClothing" ng-model="clothing">
-                                        <button type="button" name="optionsClothing" ng-model="clothing" value="CLOTHING" ng-click="getClothingrVal($event)" class="btn btn-primaryCustom">Yes</button>
-                                        <button type="button" name="optionsClothing" ng-model="clothing" value="" ng-click="getClothingrVal($event)" class="btn btn-default">No</button>
+                                        <button type="button" name="optionsClothing" ng-model="clothing" value="CLOTHING" ng-click="getClothingrVal($event)" class="btn btn-default">Yes</button>
+                                        <button type="button" name="optionsClothing" ng-model="clothing" value="" ng-click="getClothingrVal($event)" class="btn btn-primaryCustom">No</button>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span class="text-black">
@@ -35,8 +35,8 @@
                                 <br/>
                                 <div class="row">
                                     <span class="btn-group padding15_l" id="optionsFood" ng-model="food">
-                                        <button type="button" name="optionsFood" ng-model="food" value="FOOD" ng-click="getfoodVal($event)" class="btn btn-primaryCustom">Yes</button>
-                                        <button type="button" name="optionsFood" ng-model="food" value="" ng-click="getfoodVal($event)" class="btn btn-default">No</button>
+                                        <button type="button" name="optionsFood" ng-model="food" value="FOOD" ng-click="getfoodVal($event)" class="btn btn-default">Yes</button>
+                                        <button type="button" name="optionsFood" ng-model="food" value="" ng-click="getfoodVal($event)" class="btn btn-primaryCustom">No</button>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span class="text-black">
@@ -46,8 +46,8 @@
                                 <br/>
                                 <div class="row">
                                     <span class="btn-group padding15_l" id="optionsShelter" ng-model="shelter">
-                                        <button type="button" name="optionsShelter" ng-model="shelter" value="SHELTER" ng-click="getshelterVal($event)" class="btn btn-primaryCustom">Yes</button>
-                                        <button type="button" name="optionsShelter" ng-model="shelter" value="" ng-click="getshelterVal($event)" class="btn btn-default">No</button>
+                                        <button type="button" name="optionsShelter" ng-model="shelter" value="SHELTER" ng-click="getshelterVal($event)" class="btn btn-default">Yes</button>
+                                        <button type="button" name="optionsShelter" ng-model="shelter" value="" ng-click="getshelterVal($event)" class="btn btn-primaryCustom">No</button>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span class="text-black">
@@ -72,8 +72,8 @@
                             <div class="form-group">
                                 <div class="row">
                                     <span class="btn-group padding15_l" id="optionsdomVol" ng-model="domVol">
-                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="DOMESTIC VIOLENCE" ng-click="getdomVolVal($event)" class="btn btn-primaryCustom">Yes</button>
-                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="" ng-click="getdomVolVal($event)" class="btn btn-default">No</button>
+                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="DOMESTIC VIOLENCE" ng-click="getdomVolVal($event)" class="btn btn-default">Yes</button>
+                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="" ng-click="getdomVolVal($event)" class="btn btn-primaryCustom">No</button>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span class="text-black">
@@ -83,8 +83,8 @@
                                 <br/>
                                 <div class="row">
                                     <span class="btn-group padding15_l" id="hygProducts" ng-model="hygProducts">
-                                        <button type="button" name="hygProducts" ng-model="hygProducts" value="HYGIENE PRODUCTS" ng-click="gethygProductsVal($event)" class="btn btn-primaryCustom">Yes</button>
-                                        <button type="button" name="hygProducts" ng-model="hygProducts" value="" ng-click="gethygProductsVal($event)" class="btn btn-default">No</button>
+                                        <button type="button" name="hygProducts" ng-model="hygProducts" value="HYGIENE PRODUCTS" ng-click="gethygProductsVal($event)" class="btn btn-default">Yes</button>
+                                        <button type="button" name="hygProducts" ng-model="hygProducts" value="" ng-click="gethygProductsVal($event)" class="btn btn-primaryCustom">No</button>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span class="text-black">
@@ -94,8 +94,8 @@
                                 <br/>
                                 <div class="row">
                                     <span class="btn-group padding15_l" id="medical" ng-model="medical">
-                                        <button type="button" name="medical" ng-model="medical" value="MEDICAL" ng-click="getmedicalVal($event)" class="btn btn-primaryCustom">Yes</button>
-                                        <button type="button" name="medical" ng-model="medical" value="" ng-click="getmedicalVal($event)" class="btn btn-default">No</button>
+                                        <button type="button" name="medical" ng-model="medical" value="MEDICAL" ng-click="getmedicalVal($event)" class="btn btn-default">Yes</button>
+                                        <button type="button" name="medical" ng-model="medical" value="" ng-click="getmedicalVal($event)" class="btn btn-primaryCustom">No</button>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span class="text-black">
@@ -113,6 +113,9 @@
                 </div>
             </div>
         </form>
+        <br/>
+        <br />
+        <br />
         <div class="alert-warning navbar-fixed-bottom text-center">
             <br />
             <i class="glyphicon glyphicon-sort"> <span><a href="#">Directions</a></span></i>&nbsp;&nbsp;
@@ -128,7 +131,7 @@
             </div>
             <div ng-repeat="Data in myData" ng-show="dataLoaded == true" ng-hide="showException == true" >
                    <div class="panel-group" id="accordion">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default" ng-hide="Data.details.length === 0 " >
                         <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#{{Data.resourceIndex}}">
                                 <h4 class="panel-title" id="providername">
                                     <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}">{{Data.resourceName}}</a>
@@ -198,9 +201,50 @@
                             </div>
                         </div>
                     </div>
+                       
                 </div>
             </div>
             <br />
+            <div class="alert alert-danger" ng-show="Data.details.length === 0 && clothing ==='CLOTHING' ">
+                <span>
+                    <i class="glyphicon glyphicon-warning-sign"></i>
+                    Sorry! there are no Clothing resources avilable.
+                </span>
+            </div>
+            <div class="alert alert-danger" ng-show="Data.details.length === 0 && food ==='FOOD' ">
+                <span>
+                    <i class="glyphicon glyphicon-warning-sign"></i>
+                    Sorry! there are no Food resources avilable.
+                </span>
+            </div>
+
+            <div class="alert alert-danger" ng-show="Data.details.length === 0 && shelter ==='SHELTER' ">
+                <span>
+                    <i class="glyphicon glyphicon-warning-sign"></i>
+                    Sorry! there are no Shelter resources avilable.
+                </span>
+            </div>
+
+            <div class="alert alert-danger" ng-show="Data.details.length === 0 && domVol ==='DOMESTIC VIOLENCE' ">
+                <span>
+                    <i class="glyphicon glyphicon-warning-sign"></i>
+                    Sorry! there are no Domestic Violence resources avilable.
+                </span>
+            </div>
+
+            <div class="alert alert-danger" ng-show="Data.details.length === 0 && hygProducts ==='HYGIENE PRODUCTS' ">
+                <span>
+                    <i class="glyphicon glyphicon-warning-sign"></i>
+                    Sorry! there are no Hygiene product resources avilable.
+                </span>
+            </div>
+
+            <div class="alert alert-danger" ng-show="Data.details.length === 0 && medical == 'MEDICAL' ">
+                <span>
+                    <i class="glyphicon glyphicon-warning-sign"></i>
+                    Sorry! there are no Medical resources avilable.
+                </span>
+            </div>
         </div>
         <div class="alert-warning navbar-fixed-bottom text-center">
             <br />

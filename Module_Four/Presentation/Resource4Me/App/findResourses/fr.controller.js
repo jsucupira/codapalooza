@@ -10,12 +10,12 @@
         $(".btn-group > .btn").click(function () {
             $(this).addClass("btn-primaryCustom").removeClass("btn-default").siblings().removeClass("btn-primaryCustom").addClass("btn-default");
         });
-        $scope.clothing = "CLOTHING";
-        $scope.food = "FOOD";
-        $scope.shelter = "SHELTER";
-        $scope.domVol = "DOMESTIC VIOLENCE";
-        $scope.hygProducts = "HYGIENE PRODUCTS";
-        $scope.medical = "MEDICAL";
+        $scope.clothing = "";
+        $scope.food = "";
+        $scope.shelter = "";
+        $scope.domVol = "";
+        $scope.hygProducts = "";
+        $scope.medical = "";
 
         $scope.getClothingrVal = function (event) {
             console.log($scope.clothing);
