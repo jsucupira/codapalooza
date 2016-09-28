@@ -25,13 +25,22 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Resource4Me", "Resource4Me\
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{A81B4A23-AF18-4B01-8944-84D6FB3D4B47}") = "Res4MeMobile", "Res4MeMobile\Res4MeMobile.iceproj", "{2E41A787-2272-4A60-B45D-974E3388B596}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{61D03F3D-800C-47D9-A33C-AC9CF5D503AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{61D03F3D-800C-47D9-A33C-AC9CF5D503AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61D03F3D-800C-47D9-A33C-AC9CF5D503AE}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{61D03F3D-800C-47D9-A33C-AC9CF5D503AE}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{2E41A787-2272-4A60-B45D-974E3388B596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E41A787-2272-4A60-B45D-974E3388B596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E41A787-2272-4A60-B45D-974E3388B596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E41A787-2272-4A60-B45D-974E3388B596}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
