@@ -1,0 +1,210 @@
+﻿<section ng-hide="isThankYou">
+    <nav class="navbar navbar-fixed-top  navbar-inverse">
+
+        <a href="#/HP" title="Home Page" class="homeIconBkg pull-left"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
+
+        <div id="home" class="text-center text-white ">
+            <h4 class="">Resources4U</h4>
+        </div>
+    </nav>
+    <form id="AppForm" name="AppForm">
+        <div class="panel-group margin50_t" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" id="providername">
+                        <a data-toggle="collapse" data-parent="#accordion" href="">Application</a>
+                    </h4>
+                </div>
+                <div id="application" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="alert-info padding15 margin15_b">
+                            <div class="text-black"><span class="text-danger">*</span> - Required</div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="yourFirstName" class="control-label">First Name<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="yourFirstName" name="firstName"  placeholder="First name" required  ng-model="firstName" autofocus>
+                                        <div class="alert alert-danger"
+                                             ng-show="AppForm.firstName.$error.required && AppForm.firstName.$dirty">
+                                            Please enter your last name!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="yourLastName" class="control-label">Last Name<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="yourLastName" name="lastName"  placeholder="Last name" required ng-model="lastName">
+                                        <div class="alert alert-danger"
+                                             ng-show="AppForm.lastName.$error.required && AppForm.lastName.$dirty">
+                                            Please enter your last name!
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="yourPhone" class="control-label">Phone<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="yourPhone"  name="yourPhone" placeholder="(XXX)XXX-XXXX" maxlength="14" required ng-model="phone">
+                                        <div class="alert alert-danger"
+                                             ng-show="AppForm.yourPhone.$error.required && AppForm.yourPhone.$dirty">
+                                            Please enter your last name!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="yourEmail" class="control-label">Email address<span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="yourEmail" name="yourEmail"  placeholder="myemail@example.com" required ng-model="email">
+                                        <div class="alert alert-danger"
+                                             ng-show="AppForm.yourEmail.$error.required && AppForm.yourEmail.$dirty">
+                                            Please enter your last name!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <label for="optionsGender" class="control-label">Gender<span class="text-danger">*</span></label><br />
+                                    <!--<div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsGender" class="disabled" value="Male" ng-model="gender"> Male  ng-disabled="marriableStatus != 'single'"
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsGender" value="Female" ng-model="gender" ng-disabled="marriableStatus != 'single'"> Female
+                                        </label>
+                                    </div>-->
+                                    <div class="btn-group" id="optionsGender" ng-model="gender">
+                                        <button type="button" name="optionsGender" ng-model="gender"  value="Male" ng-click="getGenderVal($event)" class="btn btn-default">Male</button>
+                                        <button type="button" name="optionsGender" ng-model="gender"  value="Female" ng-click="getGenderVal($event)" class="btn btn-default">Female</button>
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <label for="optionsStatus" class="control-label">Status<span class="text-danger">*</span></label> <br />
+                                    <!--<div class="radio">
+                                        <label>s
+                                            <input type="radio" name="optionsStatus" id="optionsRadios1" value="single" ng-model="marriableStatus"> Single
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsStatus" id="optionsRadios2" value="married" ng-model="marriableStatus"> Married
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsStatus" id="optionsRadios3" value="has partner" ng-model="marriableStatus"> Partnership
+                                        </label>
+                                    </div>-->
+                                    <div class="btn-group" id="optionsStatus" ng-model="marriableStatus">
+                                        <button type="button" id="optionsRadios" name="optionsStatus" ng-model="marriageStatus"  value="Single" ng-click="getStatusVal($event)" class="btn btn-default">Single</button>
+                                        <button type="button" id="optionsRadios" name="optionsStatus" ng-model="marriageStatus"  value="Married" ng-click="getStatusVal($event)" class="btn btn-default">Married</button>
+                                        <button type="button" id="optionsRadios" name="optionsStatus" ng-model="marriageStatus"  value="Partnership" ng-click="getStatusVal($event)" class="btn btn-default">Partnership</button>
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="sel1">How many children under 18?<span class="text-danger">*</span></label><br />
+                                        <!--<select class="form-control" id="sel1" ng-model="childrenCount">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5+</option>
+                                        </select>-->
+                                        <div class="btn-group" id="sel1" ng-model="childrenCount">
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="0" ng-click="getChildrenVal($event)" class="btn btn-default">0</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="1" ng-click="getChildrenVal($event)" class="btn btn-default">1</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="2" ng-click="getChildrenVal($event)" class="btn btn-default">2</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="3" ng-click="getChildrenVal($event)" class="btn btn-default">3</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="4" ng-click="getChildrenVal($event)" class="btn btn-default">4</button>
+                                            <button type="button" name="childrenCount"  ng-model="childrenCount"  value="5+" ng-click="getChildrenVal($event)" class="btn btn-default">5+</button>
+                                        </div>
+                                    </div>
+                                    <br />
+                           
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <div class="padding1o_lr">
+                                            <button type="submit" class="btn btn-lg btn-block btn-custom" ng-click="submitForm()" ng-disabled="AppForm.$invalid">Submit</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+<section ng-show="isThankYou" class="appBkg">
+    <nav class="navbar navbar-fixed-top  navbar-inverse">
+
+        <a href="#/HP" title="Home Page" class="homeIconBkg pull-left"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
+
+        <div id="home" class="text-center text-white ">
+            <h4 class="">Resources4U</h4>
+        </div>
+    </nav>
+    <div class="panel-group margin50_t" id="accordionTY">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title" id="providername">
+                    <a data-toggle="collapse" data-parent="#accordionTY" href="">Thank you!</a>
+                </h4>
+            </div>
+            <div id="applicationTY" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="alert-info padding15 margin15_b">
+                        <p class="text-black" >Your information has been submitted to&nbsp;<span id="providername">Catholic Charities</span>.</p>
+                        <br>
+                        <p>Arrive by&nbsp;<span id="timearrive"><strong class="text-danger">5PM</strong></span>&nbsp; to keep reservation</p>
+                        <br>
+                        <h5 id="providerlocation" class="text-black" ><strong>Catholic Charities - Mercy Apartments</strong></h5>
+                        <br>
+                        <a href="https://www.google.com/maps/dir/2202+N+Westshore+Blvd,+Tampa,+FL/10049+N+Florida+Ave,+Tampa,+FL+33612/@27.9979656,-82.5264403,13z/am=t/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x88c2c256c7056283:0x7e78f42f1febeb49!2m2!1d-82.5247951!2d27.9606589!1m5!1m1!1s0x88c2c6d92e0de847:0x82c5615abbb3c32f!2m2!1d-82.4577919!2d28.042135"><i class="glyphicon glyphicon-map-marker"></i>&nbsp; Get Directions</a>
+                        <div>
+                            <br>
+                            <p>Address:</p>
+                            <p id="streetname"class="text-black">10049 N Florida Avenue</p>
+                            <p id="citystatezip" class="text-black">Tampa,FL 33612</p>
+                            <p>Phone: <span id="phone" class="text-black" >813-375-3933</span></p>
+                            <p>Hours: <span id="timeopen" class="text-black">8:00 AM - 8:00 PM</span></p>
+                        </div>
+
+
+                        <div class="">
+                            <button type="submit" class="btn btn-lg btn-custom " ng-click="done()">DONE</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="alert-warning navbar-fixed-bottom text-center">
+    <br />
+    <i class="glyphicon glyphicon-sort"> <span><a href="#">Directions</a></span></i>&nbsp;&nbsp;
+    <i class="glyphicon glyphicon-earphone"><span> <a href="tel:18004181447">Contact</a></span></i> &nbsp;&nbsp;
+    <i class="glyphicon glyphicon-grain"><span> <a href="#">Eligibility</a></span></i>
+</div>

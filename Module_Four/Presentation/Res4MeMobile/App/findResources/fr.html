@@ -1,0 +1,212 @@
+﻿<div class="ng-cloak">
+    <nav class="navbar navbar-fixed-top  navbar-inverse">
+        
+        <a href="#/HP" title="Home Page" class="homeIconBkg pull-left"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
+        
+        <div id="home" class= "text-center text-white ">
+            <h4 class="">Resources4U</h4>
+        </div>
+    </nav>
+    <input type="checkbox" ng-model="myValue" aria-label="Toggle ngShow" hidden="hidden">
+    <section id="findresourcesme" ng-show="myValue" ng-cloak>
+        <div class="alert alert-info margin50_t"> <p class="text-black">Please select any resource categories.</p></div>
+        <form id="resouceForm">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapse1">RESOURCES</a>
+                            <span class="caret text-right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <span class="btn-group padding15_l" id="optionsClothing" ng-model="clothing">
+                                        <button type="button" name="optionsClothing" ng-model="clothing" value="CLOTHING" ng-click="getClothingrVal($event)" class="btn btn-primaryCustom">Yes</button>
+                                        <button type="button" name="optionsClothing" ng-model="clothing" value="" ng-click="getClothingrVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        CLOTHING
+                                    </span>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <span class="btn-group padding15_l" id="optionsFood" ng-model="food">
+                                        <button type="button" name="optionsFood" ng-model="food" value="FOOD" ng-click="getfoodVal($event)" class="btn btn-primaryCustom">Yes</button>
+                                        <button type="button" name="optionsFood" ng-model="food" value="" ng-click="getfoodVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        FOOD
+                                    </span>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <span class="btn-group padding15_l" id="optionsShelter" ng-model="shelter">
+                                        <button type="button" name="optionsShelter" ng-model="shelter" value="SHELTER" ng-click="getshelterVal($event)" class="btn btn-primaryCustom">Yes</button>
+                                        <button type="button" name="optionsShelter" ng-model="shelter" value="" ng-click="getshelterVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        SHELTER
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapse2">
+                                HUMAN SERVICES
+                            </a><span class="caret"></span>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <span class="btn-group padding15_l" id="optionsdomVol" ng-model="domVol">
+                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="DOMESTIC VIOLENCE" ng-click="getdomVolVal($event)" class="btn btn-primaryCustom">Yes</button>
+                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="" ng-click="getdomVolVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        DOMESTIC VIOLENCE
+                                    </span>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <span class="btn-group padding15_l" id="hygProducts" ng-model="hygProducts">
+                                        <button type="button" name="hygProducts" ng-model="hygProducts" value="HYGIENE PRODUCTS" ng-click="gethygProductsVal($event)" class="btn btn-primaryCustom">Yes</button>
+                                        <button type="button" name="hygProducts" ng-model="hygProducts" value="" ng-click="gethygProductsVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        HYGIENE PRODUCTS
+                                    </span>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <span class="btn-group padding15_l" id="medical" ng-model="medical">
+                                        <button type="button" name="medical" ng-model="medical" value="MEDICAL" ng-click="getmedicalVal($event)" class="btn btn-primaryCustom">Yes</button>
+                                        <button type="button" name="medical" ng-model="medical" value="" ng-click="getmedicalVal($event)" class="btn btn-default">No</button>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="text-black">
+                                        MEDICAL
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-lg btn-custom" ng-click="Update()" value="Search"><i class="glyphicon glyphicon-search "></i>&nbsp; Search </button>
+                </div>
+            </div>
+        </form>
+        <div class="alert-warning navbar-fixed-bottom text-center">
+            <br />
+            <i class="glyphicon glyphicon-sort"> <span><a href="#">Directions</a></span></i>&nbsp;&nbsp;
+            <i class="glyphicon glyphicon-earphone"><span> <a href="tel:18004181447">Contact</a></span></i> &nbsp;&nbsp;
+            <i class="glyphicon glyphicon-grain"><span> <a href="#">Eligibility</a></span></i>
+        </div>
+    </section>
+
+    <!--Another page-->
+    <div ng-hide="myValue">
+        <div class="margin50_t">
+            <div class="loader center-block margin50_t" ng-hide="dataLoaded" >
+            </div>
+            <div ng-repeat="Data in myData" ng-show="dataLoaded == true" ng-hide="showException == true" >
+                   <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#{{Data.resourceIndex}}">
+                                <h4 class="panel-title" id="providername">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}">{{Data.resourceName}}</a>
+                                    <span class="caret text-right"></span>
+                                    <span class="label label-success badge pull-right">{{Data.details.length}}</span>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#{{Data.resourceIndex}}" class="pull-right">Results:</a>
+                                </h4>
+                        </div>
+                        <div id="{{Data.resourceIndex}}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div ng-repeat="Inside in Data.details" class="alert-info padding15 margin15_b">
+
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p><span>Provider:</span> </p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <p class="text-black">{{Inside.providerName}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p>Distance:</p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <span class="text-black"> {{Inside.distance  | number:2 }} miles </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p>Address:</p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <p id="street" class="text-black">{{Inside.streetAddress}}</p>
+                                            <p id="citystatezip" class="text-black">{{Inside.city}}, {{Inside.state}} {{Inside.zipCode}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p>Phone:</p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <p id="phone" class="text-black">{{Inside.phoneNumber}}</p><a href="tel:{{Inside.phoneNumber}}" class="btn btn-lg btn-custom text-white"><i class="glyphicon glyphicon-earphone"></i> Call</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p>Availability:</p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <p id="availability" class="text-black"><span class="badge">5</span>&nbsp;Available Beds | Check-in before: 5PM</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                            <p>Service Offered:</p>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                                            <p id="service_offered" class="text-black"> AIDS/Drug Assistance Programs,Case/Care Management,Education, Employment, Food,Material Goods,Personal Enrichment, Temporary Financial Assistance, Transportation</p>
+                                        </div>
+                                    </div>
+                                    <div class="row text-center">
+                                        <a href="/#/UserInfo" class="btn btn-lg btn-custom text-white">Apply for Resource </a>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+        <div class="alert-warning navbar-fixed-bottom text-center">
+            <br />
+            <i class="glyphicon glyphicon-sort"> <span><a href="#">Directions</a></span></i>&nbsp;&nbsp;
+            <i class="glyphicon glyphicon-earphone"><span> <a href="tel:18004181447">Contact</a></span></i> &nbsp;&nbsp;
+            <i class="glyphicon glyphicon-grain"><span> <a href="#">Eligibility</a></span></i>
+</div>
+    </div>
+</div>
