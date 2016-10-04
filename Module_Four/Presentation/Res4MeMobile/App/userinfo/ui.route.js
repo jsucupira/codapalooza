@@ -14,7 +14,7 @@
             {
                 url: '/UserInfo',
                 config: {
-                    templateUrl: 'App/userinfo/ui.html',
+                    templateUrl: 'app/userinfo/ui.html',
                     controller: 'UserInfo'
                 }
             }
