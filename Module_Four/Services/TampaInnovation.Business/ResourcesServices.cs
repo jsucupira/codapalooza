@@ -40,7 +40,8 @@ namespace TampaInnovation.Business
             List<ProviderResult> providerResults = MemoryStorageCaching.Get<List<ProviderResult>>(CACHE_KEY, SECTION)
                 ?? new List<ProviderResult>();
 
-            if (!providerResults.Any())
+            //TODO: Caching is breaking things
+            //if (!providerResults.Any())
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
@@ -49,19 +50,24 @@ namespace TampaInnovation.Business
                     {
                         AbsoluteExpiration = DateTimeOffset.Now.AddHours(1)
                     });
+                    foreach (ProviderResult providerResult in providerResults)
+                    {
+                        providerResult.ProvidedServices = providerResult.ProvidedServices.Distinct(new ServicesEquality()).ToList();
+                        providerResult.ContactInformations = providerResult.ContactInformations.Distinct(new ContactEquality()).ToList();
+                    }
                 }
             }
 
+
+            List<ProviderResult> tempList = new List<ProviderResult>();
+            tempList.AddRange(providerResults);
             List<ProviderResult> filteredList = new List<ProviderResult>();
             LatLong latLong;
             searchRequest.Filters = searchRequest.Filters.Where(t => !string.IsNullOrEmpty(t)).ToList();
-            foreach (ProviderResult providerResult in providerResults)
+            foreach (ProviderResult providerResult in tempList)
             {
                 foreach (string filter in searchRequest.Filters)
                 {
-                    providerResult.ProvidedServices = providerResult.ProvidedServices.Distinct(new ServicesEquality()).ToList();
-                    providerResult.ContactInformations = providerResult.ContactInformations.Distinct(new ContactEquality()).ToList();
-
                     if (providerResult.ProvidedServices.Any(t => t.Name.ToLower().Contains(filter.ToLower())))
                     {
                         filteredList.Add(providerResult);
@@ -69,13 +75,15 @@ namespace TampaInnovation.Business
                 }
             }
 
+            filteredList = filteredList.Distinct(new ProviderEquality()).ToList();
+
             foreach (ProviderResult providerResult in filteredList)
             {
                 List<Services> listToRemove = new List<Services>();
                 foreach (Services providedService in providerResult.ProvidedServices)
                 {
                     bool contain = false;
-                    foreach (var filter in searchRequest.Filters)
+                    foreach (string filter in searchRequest.Filters)
                     {
                         if (providedService.Name.Equals(filter, StringComparison.CurrentCultureIgnoreCase))
                             contain = true;
@@ -117,6 +125,21 @@ namespace TampaInnovation.Business
             {
                 return context.ProviderResult.Find(providerId);
             }
+        }
+    }
+
+
+
+    public class ProviderEquality : IEqualityComparer<ProviderResult>
+    {
+        public bool Equals(ProviderResult x, ProviderResult y)
+        {
+            return x.Name.Equals(y.Name);
+        }
+
+        public int GetHashCode(ProviderResult obj)
+        {
+            return obj.Name.GetHashCode();
         }
     }
 
