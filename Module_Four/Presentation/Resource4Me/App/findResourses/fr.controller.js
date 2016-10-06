@@ -79,7 +79,7 @@
             requestObj.filters = userSelection;
             requestObj.query = '28.053397' + ',' + '-82.4473383';
             requestObj.range = 25;
-            requestObj.limit = 20;
+            requestObj.limit = 200;
             return dataservice.getProviders(requestObj, userSelection).then(function (response) {
                 $scope.myData = response;
                 $scope.dataLoaded = true;
