@@ -170,8 +170,8 @@
 }
 
 section {
-    width: 96vw;
-    min-height: 100vh;
+    /*width: 96vw;
+    min-height: 100vh;*/
     padding: 0px;
 }
 
