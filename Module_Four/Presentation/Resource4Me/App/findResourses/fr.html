@@ -12,102 +12,107 @@
         <div class="alert alert-info margin50_t"> <p class="text-black">Please select any resource categories.</p></div>
         <form id="resouceForm">
             <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapse1">RESOURCES</a>
-                            <span class="caret text-right"></span>
-                        </h4>
-                    </div>
-                    <div id="collapse1" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="row">
-                                    <span class="btn-group padding15_l" id="optionsClothing" ng-model="clothing">
-                                        <button type="button" name="optionsClothing" ng-model="clothing" value="CLOTHING" ng-click="getClothingrVal($event)" class="btn btn-default">Yes</button>
-                                        <button type="button" name="optionsClothing" ng-model="clothing" value="" ng-click="getClothingrVal($event)" class="btn btn-primaryCustom">No</button>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="text-black">
-                                        CLOTHING
-                                    </span>
-                                </div>
-                                <br/>
-                                <div class="row">
-                                    <span class="btn-group padding15_l" id="optionsFood" ng-model="food">
-                                        <button type="button" name="optionsFood" ng-model="food" value="FOOD" ng-click="getfoodVal($event)" class="btn btn-default">Yes</button>
-                                        <button type="button" name="optionsFood" ng-model="food" value="" ng-click="getfoodVal($event)" class="btn btn-primaryCustom">No</button>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="text-black">
-                                        FOOD
-                                    </span>
-                                </div>
-                                <br/>
-                                <div class="row">
-                                    <span class="btn-group padding15_l" id="optionsShelter" ng-model="shelter">
-                                        <button type="button" name="optionsShelter" ng-model="shelter" value="SHELTER" ng-click="getshelterVal($event)" class="btn btn-default">Yes</button>
-                                        <button type="button" name="optionsShelter" ng-model="shelter" value="" ng-click="getshelterVal($event)" class="btn btn-primaryCustom">No</button>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="text-black">
-                                        SHELTER
-                                    </span>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapse1">RESOURCES</a>
+                                    <span class="caret text-right"></span>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <span class="btn-group padding15_l" id="optionsClothing" ng-model="clothing">
+                                                <button type="button" name="optionsClothing" ng-model="clothing" value="CLOTHING" ng-click="getClothingrVal($event)" class="btn btn-default">Yes</button>
+                                                <button type="button" name="optionsClothing" ng-model="clothing" value="" ng-click="getClothingrVal($event)" class="btn btn-primaryCustom">No</button>
+                                            </span>
+                                            &nbsp;&nbsp;
+                                            <span class="text-black">
+                                                CLOTHING
+                                            </span>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <span class="btn-group padding15_l" id="optionsFood" ng-model="food">
+                                                <button type="button" name="optionsFood" ng-model="food" value="FOOD" ng-click="getfoodVal($event)" class="btn btn-default">Yes</button>
+                                                <button type="button" name="optionsFood" ng-model="food" value="" ng-click="getfoodVal($event)" class="btn btn-primaryCustom">No</button>
+                                            </span>
+                                            &nbsp;&nbsp;
+                                            <span class="text-black">
+                                                FOOD
+                                            </span>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <span class="btn-group padding15_l" id="optionsShelter" ng-model="shelter">
+                                                <button type="button" name="optionsShelter" ng-model="shelter" value="SHELTER" ng-click="getshelterVal($event)" class="btn btn-default">Yes</button>
+                                                <button type="button" name="optionsShelter" ng-model="shelter" value="" ng-click="getshelterVal($event)" class="btn btn-primaryCustom">No</button>
+                                            </span>
+                                            &nbsp;&nbsp;
+                                            <span class="text-black">
+                                                SHELTER
+                                            </span>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapse2">
-                                HUMAN SERVICES
-                            </a><span class="caret"></span>
-                        </h4>
-                    </div>
-                    <div id="collapse2" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="row">
-                                    <span class="btn-group padding15_l" id="optionsdomVol" ng-model="domVol">
-                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="DOMESTIC VIOLENCE" ng-click="getdomVolVal($event)" class="btn btn-default">Yes</button>
-                                        <button type="button" name="optionsdomVol" ng-model="domVol" value="" ng-click="getdomVolVal($event)" class="btn btn-primaryCustom">No</button>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="text-black">
-                                        DOMESTIC VIOLENCE
-                                    </span>
-                                </div>
-                                <br/>
-                                <div class="row">
-                                    <span class="btn-group padding15_l" id="hygProducts" ng-model="hygProducts">
-                                        <button type="button" name="hygProducts" ng-model="hygProducts" value="HYGIENE PRODUCTS" ng-click="gethygProductsVal($event)" class="btn btn-default">Yes</button>
-                                        <button type="button" name="hygProducts" ng-model="hygProducts" value="" ng-click="gethygProductsVal($event)" class="btn btn-primaryCustom">No</button>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="text-black">
-                                        HYGIENE PRODUCTS
-                                    </span>
-                                </div>
-                                <br/>
-                                <div class="row">
-                                    <span class="btn-group padding15_l" id="medical" ng-model="medical">
-                                        <button type="button" name="medical" ng-model="medical" value="MEDICAL" ng-click="getmedicalVal($event)" class="btn btn-default">Yes</button>
-                                        <button type="button" name="medical" ng-model="medical" value="" ng-click="getmedicalVal($event)" class="btn btn-primaryCustom">No</button>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="text-black">
-                                        MEDICAL
-                                    </span>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapse2">
+                                        HUMAN SERVICES
+                                    </a><span class="caret"></span>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <span class="btn-group padding15_l" id="optionsdomVol" ng-model="domVol">
+                                                <button type="button" name="optionsdomVol" ng-model="domVol" value="DOMESTIC VIOLENCE" ng-click="getdomVolVal($event)" class="btn btn-default">Yes</button>
+                                                <button type="button" name="optionsdomVol" ng-model="domVol" value="" ng-click="getdomVolVal($event)" class="btn btn-primaryCustom">No</button>
+                                            </span>
+                                            &nbsp;&nbsp;
+                                            <span class="text-black">
+                                                DOMESTIC VIOLENCE
+                                            </span>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <span class="btn-group padding15_l" id="hygProducts" ng-model="hygProducts">
+                                                <button type="button" name="hygProducts" ng-model="hygProducts" value="HYGIENE PRODUCTS" ng-click="gethygProductsVal($event)" class="btn btn-default">Yes</button>
+                                                <button type="button" name="hygProducts" ng-model="hygProducts" value="" ng-click="gethygProductsVal($event)" class="btn btn-primaryCustom">No</button>
+                                            </span>
+                                            &nbsp;&nbsp;
+                                            <span class="text-black">
+                                                HYGIENE PRODUCTS
+                                            </span>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <span class="btn-group padding15_l" id="medical" ng-model="medical">
+                                                <button type="button" name="medical" ng-model="medical" value="MEDICAL" ng-click="getmedicalVal($event)" class="btn btn-default">Yes</button>
+                                                <button type="button" name="medical" ng-model="medical" value="" ng-click="getmedicalVal($event)" class="btn btn-primaryCustom">No</button>
+                                            </span>
+                                            &nbsp;&nbsp;
+                                            <span class="text-black">
+                                                MEDICAL
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <br />
-
                 <div class="text-center">
                     <button type="submit" class="btn btn-lg btn-custom" ng-click="Update()" value="Search"><i class="glyphicon glyphicon-search "></i>&nbsp; Search </button>
                 </div>
@@ -193,9 +198,13 @@
                                             <p id="service_offered" class="text-black"> AIDS/Drug Assistance Programs,Case/Care Management,Education, Employment, Food,Material Goods,Personal Enrichment, Temporary Financial Assistance, Transportation</p>
                                         </div>
                                     </div>
-                                    <div class="row text-center">
-                                        <a href="/#/UserInfo" class="btn btn-lg btn-custom text-white">Apply for Resource </a>
-                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-0 col-sm-2 col-md-4 col-lg-4">
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 center-block">
+                                                <a href="/#/UserInfo" class="btn btn-lg btn-block btn-custom text-white">Apply for Resource </a>
+                                            </div>
+                                        </div>
                                 </div>
                                 <br />
                             </div>
