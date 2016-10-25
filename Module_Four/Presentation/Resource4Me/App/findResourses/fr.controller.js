@@ -16,41 +16,57 @@
         $scope.domVol = "";
         $scope.hygProducts = "";
         $scope.medical = "";
+        var btnsearch = $("#btnSearch");
+
 
         $scope.getClothingrVal = function (event) {
             console.log($scope.clothing);
             console.log(event.currentTarget.value);
             $scope.clothing = event.currentTarget.value;
+            showSearchbtn();
         }
         $scope.getfoodVal = function (event) {
             console.log($scope.food);
             console.log(event.currentTarget.value);
             $scope.food = event.currentTarget.value;
+            showSearchbtn();
         }
         $scope.getshelterVal = function (event) {
             console.log($scope.shelter);
             console.log(event.currentTarget.value);
             $scope.shelter = event.currentTarget.value;
+            showSearchbtn();
         }
         $scope.getdomVolVal = function (event) {
             console.log($scope.domVol);
             console.log(event.currentTarget.value);
             $scope.domVol = event.currentTarget.value;
+            showSearchbtn();
         }
         $scope.gethygProductsVal = function (event) {
             console.log($scope.hygProducts);
             console.log(event.currentTarget.value);
             $scope.hygProducts = event.currentTarget.value;
+            showSearchbtn();
         }
         $scope.getmedicalVal = function (event) {
             console.log($scope.medical);
             console.log(event.currentTarget.value);
             $scope.medical = event.currentTarget.value;
+            showSearchbtn();
         }
 
-
-
-
+        // enable search button only if there is a resouce selected. 
+        function showSearchbtn()
+        {
+                if( $scope.clothing === "" &&  $scope.food === "" && $scope.shelter === "" && $scope.domVol === "" && $scope.hygProducts === "" && $scope.medical === "")
+            {
+                btnsearch.addClass('hide');
+                }
+            else {
+                btnsearch.removeClass('hide');
+                }
+        }
       //  getDataFromAPI();
       
         function getDataFromAPI()  {
