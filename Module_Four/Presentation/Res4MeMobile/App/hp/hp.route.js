@@ -17,6 +17,13 @@
                     templateUrl: 'App/hp/hp.html',
                     controller: 'HomelessPeople'
                 }
+            },
+            {
+                url: '/Urgent',
+                config: {
+                    templateUrl: 'App/urgent/urgent.html',
+                    //      controller: 'HomelessPeople'
+                }
             }
         ];
     }

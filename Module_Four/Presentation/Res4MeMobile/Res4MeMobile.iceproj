@@ -50,6 +50,8 @@
     <Content Include="App\resource\resource.html" />
     <Content Include="App\resource\resource.module.js" />
     <Content Include="App\resource\resource.route.js" />
+    <Content Include="App\urgent\urgent.html" />
+    <Content Include="App\urgent\urgent.module.js" />
     <Content Include="App\userinfo\ui.controller.js" />
     <Content Include="App\userinfo\ui.html" />
     <Content Include="App\userinfo\ui.module.js" />
@@ -324,6 +326,7 @@
     <Folder Include="App\findResources\" />
     <Folder Include="App\hp\" />
     <Folder Include="App\layout\" />
+    <Folder Include="App\urgent\" />
     <Folder Include="App\userinfo\" />
     <Folder Include="App\resource\" />
     <Folder Include="App_Resources\" />

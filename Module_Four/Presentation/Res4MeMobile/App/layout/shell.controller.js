@@ -17,6 +17,9 @@
             $location.path("/FR");
         }
 
+        $scope.gotoUrgent = function () {
+            $location.path("/Urgent");
+        }
 
         $location.path('/HP');
     }
