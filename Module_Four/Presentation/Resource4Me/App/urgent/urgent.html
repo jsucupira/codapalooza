@@ -1,18 +1,44 @@
-﻿<div>
-    <div class="home-button padding15_r" data-target=".navbar"></div>
+﻿<section>
+    <nav class="navbar navbar-fixed-top  navbar-inverse">
 
-    <section id="home" class="text-primary text-center img-responsive ">
-        <h1 class="text-black">Resources4U</h1>
-        <p class="text-black lead">App to help those in need...</p>
+        <a href="#/HP" title="Home Page" class="homeIconBkg pull-left"> <i class="glyphicon glyphicon-home pull-left nav-icons text-white"></i></a>
 
-    </section>
+        <div id="home" class="text-center text-white ">
+            <h4 class="">Resources4U</h4>
+        </div>
+    </nav>
+    <form id="AppForm" name="AppForm">
+        <div class="panel-group margin50_t" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" id="providername">
+                        <a data-toggle="collapse" data-parent="#accordion" href="">Urgent Assistance</a>
+                    </h4>
+                </div>
+                <div id="application" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="alert-info padding15 margin15_b">
+                            If you are experiencing a true medical emergency and need urgent assistance, please call 911.
+                            <br/>
+                            <br/>
+                            <div class="text-center">
+                                <a href="tel:911" class="btn btn-lg btn-custom">
+                                    <i class="glyphicon glyphicon-earphone"></i>
+                                    Call 911
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-    <div style="font-size: xx-large">CALL 911, Harish</div>
-    <div class="alert-warning navbar-fixed-bottom text-center">
-        <br />
-        <i class="glyphicon glyphicon-sort"> <span><a href="#">Directions</a></span></i>&nbsp;&nbsp;
-        <i class="glyphicon glyphicon-earphone"><span> <a href="tel:18004181447">Contact</a></span></i> &nbsp;&nbsp;
-        <i class="glyphicon glyphicon-grain"><span> <a href="#">Eligibility</a></span></i>
-    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<div class="alert-warning navbar-fixed-bottom text-center">
+    <br />
+    <i class="glyphicon glyphicon-sort"> <span><a href="#">Directions</a></span></i>&nbsp;&nbsp;
+    <i class="glyphicon glyphicon-earphone"><span> <a href="tel:18004181447">Contact</a></span></i> &nbsp;&nbsp;
+    <i class="glyphicon glyphicon-grain"><span> <a href="#">Eligibility</a></span></i>
 </div>
 
